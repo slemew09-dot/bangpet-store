@@ -1,0 +1,30 @@
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0f0f0f;
+  font-family:sans-serif;
+  color:white;
+}
+
+.container{
+  text-align:center;
+}
+
+h1{
+  font-size:40px;
+  color:#00ffcc;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:#00ffcc;
+  color:black;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+}

@@ -21,6 +21,40 @@ color:white;
 overflow-x:hidden;
 }
 
+/* LOADING */
+
+#loading{
+position:fixed;
+width:100%;
+height:100%;
+background:#07131f;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+flex-direction:column;
+}
+
+.loader{
+width:80px;
+height:80px;
+border:5px solid rgba(255,255,255,0.2);
+border-top:5px solid #00d9ff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+#loading h2{
+margin-top:20px;
+color:#00d9ff;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
 /* NAVBAR */
 
 nav{
@@ -78,6 +112,16 @@ padding:20px;
 font-size:55px;
 color:#00d9ff;
 text-shadow:0 0 20px #00d9ff;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #00d9ff;
+}
+to{
+text-shadow:0 0 30px #00d9ff;
+}
 }
 
 .hero-text p{
@@ -95,9 +139,14 @@ color:black;
 text-decoration:none;
 border-radius:12px;
 font-weight:bold;
+transition:0.3s;
 }
 
-/* BUBBLE EFFECT */
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* BUBBLE */
 
 .bubble{
 position:absolute;
@@ -148,11 +197,9 @@ animation-duration:11s;
 transform:translateY(0);
 opacity:0;
 }
-
 50%{
 opacity:1;
 }
-
 100%{
 transform:translateY(-120vh);
 opacity:0;
@@ -267,13 +314,24 @@ border-radius:12px;
 font-weight:bold;
 }
 
-/* FOOTER */
+/* FLOATING WA */
 
-footer{
-padding:25px;
-text-align:center;
-background:#081018;
-color:#aaa;
+.float-wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:30px;
+text-decoration:none;
+z-index:999;
+box-shadow:0 0 20px rgba(37,211,102,0.5);
 }
 
 /* POPUP */
@@ -288,7 +346,7 @@ background:rgba(0,0,0,0.7);
 display:flex;
 justify-content:center;
 align-items:center;
-z-index:999;
+z-index:9999;
 }
 
 .popup-box{
@@ -350,9 +408,53 @@ opacity:1;
 }
 }
 
+/* NOTIF ORDER */
+
+.order-popup{
+position:fixed;
+bottom:100px;
+left:20px;
+background:#0d1b29;
+padding:15px 20px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,217,255,0.3);
+z-index:999;
+animation:fadein 1s;
+}
+
+@keyframes fadein{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* FOOTER */
+
+footer{
+padding:25px;
+text-align:center;
+background:#081018;
+color:#aaa;
+}
+
 </style>
 </head>
 <body>
+
+<!-- LOADING -->
+
+<div id="loading">
+
+<div class="loader"></div>
+
+<h2>Bangpet Guppy</h2>
+
+</div>
 
 <!-- POPUP -->
 
@@ -406,9 +508,7 @@ Order Sekarang
 
 <h1>Premium Guppy Fish</h1>
 
-<p>
-Ikan guppy sehat, aktif dan warna premium.
-</p>
+<p>Ikan sehat, aktif dan warna premium.</p>
 
 <a href="https://wa.me/6283199803391" class="btn">
 Order WhatsApp
@@ -474,9 +574,7 @@ Order WhatsApp
 
 <div class="testi-box">
 
-<p>
-"Ikan sehat dan pengiriman aman 🔥"
-</p>
+<p>"Ikan sehat dan pengiriman aman 🔥"</p>
 
 <h4>- Customer Bangpet Guppy</h4>
 
@@ -502,6 +600,18 @@ Order WhatsApp
 
 </section>
 
+<!-- FLOATING WA -->
+
+<a href="https://wa.me/6283199803391" class="float-wa">
+☎
+</a>
+
+<!-- ORDER POPUP -->
+
+<div class="order-popup" id="orderPopup">
+🔥 Rizky dari Medan baru saja membeli Red Dragon
+</div>
+
 <!-- FOOTER -->
 
 <footer>
@@ -514,6 +624,12 @@ Order WhatsApp
 
 function closePopup(){
 document.getElementById("popup").style.display="none";
+}
+
+window.onload=function(){
+setTimeout(()=>{
+document.getElementById("loading").style.display="none";
+},2000);
 }
 
 </script>

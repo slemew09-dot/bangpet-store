@@ -18,6 +18,7 @@ body{
 font-family:sans-serif;
 background:#07131f;
 color:white;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -56,6 +57,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 position:relative;
+overflow:hidden;
 }
 
 .overlay{
@@ -67,7 +69,7 @@ background:rgba(0,0,0,0.6);
 
 .hero-text{
 position:relative;
-z-index:1;
+z-index:2;
 text-align:center;
 padding:20px;
 }
@@ -93,6 +95,68 @@ color:black;
 text-decoration:none;
 border-radius:12px;
 font-weight:bold;
+}
+
+/* BUBBLE EFFECT */
+
+.bubble{
+position:absolute;
+bottom:-150px;
+background:rgba(255,255,255,0.25);
+border-radius:50%;
+animation:bubble linear infinite;
+z-index:1;
+}
+
+.x1{
+left:10%;
+width:30px;
+height:30px;
+animation-duration:8s;
+}
+
+.x2{
+left:30%;
+width:20px;
+height:20px;
+animation-duration:10s;
+}
+
+.x3{
+left:50%;
+width:40px;
+height:40px;
+animation-duration:12s;
+}
+
+.x4{
+left:70%;
+width:25px;
+height:25px;
+animation-duration:9s;
+}
+
+.x5{
+left:90%;
+width:35px;
+height:35px;
+animation-duration:11s;
+}
+
+@keyframes bubble{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
 }
 
 /* PRODUK */
@@ -151,60 +215,6 @@ color:#ccc;
 display:block;
 padding:15px;
 font-weight:bold;
-}
-
-/* GALERI */
-
-.galeri{
-padding:80px 20px;
-text-align:center;
-}
-
-.galeri h2{
-color:#00d9ff;
-margin-bottom:30px;
-font-size:35px;
-}
-
-.gallery{
-display:flex;
-gap:15px;
-overflow:auto;
-padding-bottom:10px;
-}
-
-.gallery img{
-width:320px;
-border-radius:20px;
-transition:0.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* FITUR */
-
-.fitur{
-padding:80px 20px;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
-
-.fitur-box{
-width:280px;
-background:#0d1b29;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 15px rgba(0,217,255,0.2);
-}
-
-.fitur-box h3{
-margin-bottom:10px;
-color:#00d9ff;
 }
 
 /* TESTI */
@@ -374,8 +384,7 @@ Order Sekarang
 
 <div class="menu">
 <a href="#">Home</a>
-<a href="#">Galeri</a>
-<a href="#">Harga</a>
+<a href="#">Produk</a>
 <a href="#">Kontak</a>
 </div>
 
@@ -386,6 +395,12 @@ Order Sekarang
 <section class="hero">
 
 <div class="overlay"></div>
+
+<div class="bubble x1"></div>
+<div class="bubble x2"></div>
+<div class="bubble x3"></div>
+<div class="bubble x4"></div>
+<div class="bubble x5"></div>
 
 <div class="hero-text">
 
@@ -451,45 +466,6 @@ Order WhatsApp
 
 </section>
 
-<!-- GALERI -->
-
-<section class="galeri">
-
-<h2>Galeri Guppy</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-</section>
-
-<!-- FITUR -->
-
-<section class="fitur">
-
-<div class="fitur-box">
-<h3>Pengiriman Aman</h3>
-<p>Dikemas oxygen dan anti bocor.</p>
-</div>
-
-<div class="fitur-box">
-<h3>Ikan Berkualitas</h3>
-<p>Sehat, aktif dan warna cerah.</p>
-</div>
-
-<div class="fitur-box">
-<h3>Fast Respon</h3>
-<p>Pelayanan cepat via WhatsApp.</p>
-</div>
-
-</section>
-
 <!-- TESTI -->
 
 <section class="testi">
@@ -541,10 +517,6 @@ document.getElementById("popup").style.display="none";
 }
 
 </script>
-<div class="bubble x1"></div>
-<div class="bubble x2"></div>
-<div class="bubble x3"></div>
-<div class="bubble x4"></div>
-<div class="bubble x5"></div>
+
 </body>
 </html>

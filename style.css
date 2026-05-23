@@ -312,10 +312,12 @@ footer{
 .bubble{
 position:fixed;
 bottom:-100px;
-background:rgba(255,255,255,0.2);
+background:rgba(255,255,255,0.25);
 border-radius:50%;
 animation:bubble 15s infinite linear;
-z-index:0;
+z-index:9999;
+pointer-events:none;
+backdrop-filter:blur(2px);
 }
 
 .x1{
@@ -367,4 +369,7 @@ opacity:1;
 transform:translateY(-120vh);
 opacity:0;
 }
+}
+body{
+overflow-x:hidden;
 }

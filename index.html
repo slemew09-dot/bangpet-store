@@ -157,6 +157,20 @@ text-decoration:none;
 margin-left:15px;
 }
 
+/* ONLINE STATUS */
+
+.online-status{
+position:fixed;
+top:90px;
+right:20px;
+background:#1b1b1b;
+padding:12px 18px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,255,100,0.3);
+z-index:999;
+font-size:14px;
+}
+
 /* HERO */
 
 .hero{
@@ -276,6 +290,44 @@ border-radius:12px;
 font-weight:bold;
 }
 
+/* BEFORE AFTER */
+
+.before-after{
+padding:80px 20px;
+text-align:center;
+}
+
+.before-after h2{
+color:orange;
+margin-bottom:30px;
+font-size:40px;
+}
+
+.ba-cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.ba-card{
+width:320px;
+background:#1b1b1b;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 15px rgba(255,165,0,0.15);
+}
+
+.ba-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.ba-card p{
+padding:20px;
+}
+
 /* FITUR */
 
 .fitur{
@@ -296,6 +348,31 @@ box-shadow:0 0 15px rgba(255,165,0,0.15);
 }
 
 .fitur-box h3{
+color:orange;
+margin-bottom:10px;
+}
+
+/* COUNTER */
+
+.counter{
+padding:80px 20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.count-box{
+width:250px;
+background:#1b1b1b;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 15px rgba(255,165,0,0.15);
+}
+
+.count-box h2{
+font-size:40px;
 color:orange;
 margin-bottom:10px;
 }
@@ -321,6 +398,32 @@ padding:30px;
 border-radius:20px;
 }
 
+/* RATING */
+
+.rating{
+padding:80px 20px;
+text-align:center;
+}
+
+.rating h2{
+color:orange;
+margin-bottom:20px;
+}
+
+.rating-box{
+max-width:400px;
+margin:auto;
+background:#1b1b1b;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,165,0,0.2);
+}
+
+.rating-box h1{
+font-size:60px;
+color:orange;
+}
+
 /* FLOAT WA */
 
 .float-wa{
@@ -341,6 +444,46 @@ z-index:999;
 box-shadow:0 0 20px rgba(37,211,102,0.5);
 }
 
+/* PROMO BAR */
+
+.promo-bar{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:orange;
+color:black;
+text-align:center;
+padding:12px;
+font-weight:bold;
+z-index:999;
+}
+
+/* NOTIF */
+
+.notif{
+position:fixed;
+left:20px;
+bottom:70px;
+background:#1b1b1b;
+padding:15px 20px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(255,165,0,0.2);
+z-index:999;
+animation:fadein 1s;
+}
+
+@keyframes fadein{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 /* FOOTER */
 
 footer{
@@ -357,11 +500,8 @@ color:#888;
 <!-- LOADING -->
 
 <div id="loading">
-
 <div class="loader"></div>
-
 <h2>Bangpet LCD Service</h2>
-
 </div>
 
 <!-- POPUP -->
@@ -376,9 +516,7 @@ color:#888;
 
 <h2>Promo Service LCD 🔥</h2>
 
-<p>
-Diskon ganti LCD sampai 20% minggu ini!
-</p>
+<p>Diskon ganti LCD sampai 20% minggu ini!</p>
 
 <a href="https://wa.me/6283199803391" class="popup-btn">
 Chat Sekarang
@@ -386,6 +524,12 @@ Chat Sekarang
 
 </div>
 
+</div>
+
+<!-- ONLINE -->
+
+<div class="online-status">
+🟢 Teknisi Online • Respon ±1 Menit
 </div>
 
 <!-- NAVBAR -->
@@ -410,9 +554,7 @@ Chat Sekarang
 
 <h1>SERVICE LCD HP</h1>
 
-<p>
-Ganti LCD cepat, aman dan bergaransi 🔥
-</p>
+<p>Ganti LCD cepat, aman dan bergaransi 🔥</p>
 
 <a href="https://wa.me/6283199803391" class="btn">
 Konsultasi WhatsApp
@@ -450,9 +592,9 @@ Order
 
 <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
 
-<h3>Service Touchscreen</h3>
+<h3>Touchscreen</h3>
 
-<p>Touch error, ghost touch dan blank.</p>
+<p>Touch error dan ghost touch.</p>
 
 <span class="price">Mulai 100K</span>
 
@@ -466,7 +608,7 @@ Order
 
 <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=1200&auto=format&fit=crop">
 
-<h3>Service HP Mati</h3>
+<h3>HP Mati</h3>
 
 <p>Diagnosa cepat dan aman.</p>
 
@@ -476,6 +618,28 @@ Order
 Order
 </a>
 
+</div>
+
+</div>
+
+</section>
+
+<!-- BEFORE AFTER -->
+
+<section class="before-after">
+
+<h2>Before & After</h2>
+
+<div class="ba-cards">
+
+<div class="ba-card">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+<p>Sebelum Service</p>
+</div>
+
+<div class="ba-card">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
+<p>Sesudah Service</p>
 </div>
 
 </div>
@@ -503,6 +667,27 @@ Order
 
 </section>
 
+<!-- COUNTER -->
+
+<section class="counter">
+
+<div class="count-box">
+<h2>2500+</h2>
+<p>HP Berhasil Diperbaiki</p>
+</div>
+
+<div class="count-box">
+<h2>1200+</h2>
+<p>Customer Puas</p>
+</div>
+
+<div class="count-box">
+<h2>5 Tahun</h2>
+<p>Pengalaman Service</p>
+</div>
+
+</section>
+
 <!-- TESTI -->
 
 <section class="testi">
@@ -521,11 +706,40 @@ Order
 
 </section>
 
+<!-- RATING -->
+
+<section class="rating">
+
+<h2>Rating Customer</h2>
+
+<div class="rating-box">
+
+<h1>4.9 ⭐</h1>
+
+<p>Dari 1200+ Customer</p>
+
+</div>
+
+</section>
+
 <!-- FLOAT WA -->
 
 <a href="https://wa.me/6283199803391" class="float-wa">
 ☎
 </a>
+
+<!-- PROMO -->
+
+<div class="promo-bar">
+🔥 Promo Diskon LCD Berakhir Dalam:
+<span id="countdown"></span>
+</div>
+
+<!-- NOTIF -->
+
+<div class="notif" id="notif">
+🔥 Andi baru saja service LCD Samsung
+</div>
 
 <!-- FOOTER -->
 
@@ -545,9 +759,68 @@ document.getElementById("loading").style.display="none";
 
 }
 
+/* CLOSE POPUP */
+
 function closePopup(){
 document.getElementById("popup").style.display="none";
 }
+
+/* COUNTDOWN */
+
+var time = 3600;
+
+setInterval(()=>{
+
+let hours =
+Math.floor(time / 3600);
+
+let minutes =
+Math.floor((time % 3600) / 60);
+
+let seconds =
+time % 60;
+
+document.getElementById("countdown")
+.innerHTML =
+hours + "j " +
+minutes + "m " +
+seconds + "d";
+
+time--;
+
+},1000);
+
+/* NOTIF */
+
+const notif = [
+"🔥 Andi baru service LCD Samsung",
+"🔥 Rizky baru ganti touchscreen",
+"🔥 Dika baru service HP mati",
+"🔥 Kevin baru service iPhone",
+"🔥 Fajar baru ganti LCD Oppo"
+];
+
+function showNotif(){
+
+const box =
+document.getElementById("notif");
+
+const random =
+notif[Math.floor(Math.random()*notif.length)];
+
+box.innerHTML = random;
+
+box.style.display = "block";
+
+setTimeout(()=>{
+box.style.display = "none";
+},8000);
+
+}
+
+showNotif();
+
+setInterval(showNotif,12000);
 
 </script>
 

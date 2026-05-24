@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bangpet LCD Service</title>
+<title>Bangpet Service</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,12 +13,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:sans-serif;
+font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:#111111;
+background:#0f0f0f;
 color:white;
 overflow-x:hidden;
 }
@@ -27,7 +29,7 @@ overflow-x:hidden;
 position:fixed;
 width:100%;
 height:100%;
-background:#111111;
+background:#0f0f0f;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -36,10 +38,10 @@ z-index:99999;
 }
 
 .loader{
-width:80px;
-height:80px;
-border:5px solid rgba(255,255,255,0.1);
-border-top:5px solid orange;
+width:70px;
+height:70px;
+border:4px solid rgba(255,255,255,0.1);
+border-top:4px solid #00ffd5;
 border-radius:50%;
 animation:spin 1s linear infinite;
 }
@@ -52,83 +54,8 @@ transform:rotate(360deg);
 
 #loading h2{
 margin-top:20px;
-color:orange;
-}
-
-/* POPUP */
-
-.popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.popup-box{
-width:90%;
-max-width:350px;
-background:#1b1b1b;
-border-radius:25px;
-overflow:hidden;
-text-align:center;
-position:relative;
-animation:popup 0.4s ease;
-box-shadow:0 0 20px rgba(255,165,0,0.3);
-}
-
-.popup-box img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.popup-box h2{
-margin-top:15px;
-color:orange;
-}
-
-.popup-box p{
-padding:10px 20px;
-color:#ccc;
-}
-
-.popup-btn{
-display:inline-block;
-margin:20px;
-padding:12px 25px;
-background:orange;
-color:black;
-text-decoration:none;
-border-radius:12px;
-font-weight:bold;
-}
-
-.close{
-position:absolute;
-top:10px;
-right:10px;
-width:35px;
-height:35px;
-border:none;
-border-radius:50%;
-font-size:18px;
-}
-
-@keyframes popup{
-from{
-transform:scale(0.7);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
+color:#00ffd5;
+font-weight:600;
 }
 
 /* NAVBAR */
@@ -137,122 +64,166 @@ nav{
 position:fixed;
 top:0;
 width:100%;
-padding:20px;
+padding:18px 25px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
+background:rgba(15,15,15,0.7);
+backdrop-filter:blur(12px);
 z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-nav h2{
-color:orange;
-text-shadow:0 0 10px orange;
+.logo{
+font-size:26px;
+font-weight:700;
+color:#00ffd5;
+letter-spacing:1px;
 }
 
 .menu a{
-color:white;
 text-decoration:none;
-margin-left:15px;
+color:white;
+margin-left:18px;
+font-size:15px;
+transition:0.3s;
 }
 
-/* ONLINE STATUS */
-
-.online-status{
-position:fixed;
-top:90px;
-right:20px;
-background:#1b1b1b;
-padding:12px 18px;
-border-radius:12px;
-box-shadow:0 0 15px rgba(0,255,100,0.3);
-z-index:999;
-font-size:14px;
+.menu a:hover{
+color:#00ffd5;
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:120px 25px 80px;
+position:relative;
+}
+
+.glow{
+position:absolute;
+width:350px;
+height:350px;
+background:#00ffd5;
+filter:blur(140px);
+opacity:0.12;
+border-radius:50%;
+z-index:0;
+}
+
+.glow.one{
+top:-100px;
+left:-100px;
+}
+
+.glow.two{
+bottom:-100px;
+right:-100px;
+}
+
+.hero-content{
+position:relative;
+z-index:1;
 text-align:center;
-padding:20px;
-background:linear-gradient(to bottom,#111111,#1b1b1b);
+max-width:700px;
 }
 
-.hero-text h1{
-font-size:55px;
-color:orange;
-text-shadow:0 0 20px orange;
-animation:glow 2s infinite alternate;
+.hero-content h1{
+font-size:65px;
+line-height:1.1;
+font-weight:700;
+margin-bottom:20px;
 }
 
-@keyframes glow{
-from{
-text-shadow:0 0 10px orange;
-}
-to{
-text-shadow:0 0 30px orange;
-}
+.hero-content h1 span{
+color:#00ffd5;
 }
 
-.hero-text p{
-margin-top:15px;
-color:#bbb;
+.hero-content p{
+color:#bcbcbc;
 font-size:18px;
+line-height:1.7;
+margin-bottom:35px;
 }
 
-.btn{
+.hero-btn{
 display:inline-block;
-margin-top:25px;
-padding:14px 30px;
-background:orange;
+padding:16px 35px;
+background:#00ffd5;
 color:black;
 text-decoration:none;
-border-radius:12px;
-font-weight:bold;
+border-radius:50px;
+font-weight:600;
 transition:0.3s;
+box-shadow:0 0 25px rgba(0,255,213,0.3);
 }
 
-.btn:hover{
-transform:scale(1.1);
+.hero-btn:hover{
+transform:translateY(-5px);
 }
 
-/* SERVICES */
+/* LIVE STATUS */
+
+.live-box{
+margin-top:30px;
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:12px 22px;
+background:#161616;
+border:1px solid rgba(255,255,255,0.05);
+border-radius:50px;
+font-size:14px;
+color:#d9d9d9;
+}
+
+.dot{
+width:12px;
+height:12px;
+background:#00ff66;
+border-radius:50%;
+box-shadow:0 0 15px #00ff66;
+}
+
+/* SERVICE */
 
 .service{
-padding:80px 20px;
+padding:100px 25px;
 }
 
-.service h2{
+.title{
 text-align:center;
-font-size:40px;
-margin-bottom:40px;
-color:orange;
+font-size:42px;
+margin-bottom:60px;
+}
+
+.title span{
+color:#00ffd5;
 }
 
 .cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
 .card{
-width:300px;
-background:#1b1b1b;
-border-radius:20px;
+background:#151515;
+border-radius:25px;
 overflow:hidden;
-transition:0.3s;
-box-shadow:0 0 15px rgba(255,165,0,0.15);
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.04);
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 25px rgba(255,165,0,0.4);
+box-shadow:0 0 40px rgba(0,255,213,0.08);
 }
 
 .card img{
@@ -261,236 +232,165 @@ height:220px;
 object-fit:cover;
 }
 
-.card h3{
-padding:20px 20px 10px;
-color:orange;
+.card-content{
+padding:25px;
 }
 
-.card p{
-padding:0 20px;
-color:#bbb;
+.card-content h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.card-content p{
+color:#bbbbbb;
+font-size:15px;
+line-height:1.7;
 }
 
 .price{
-display:block;
-padding:20px;
+margin-top:18px;
 font-size:28px;
-font-weight:bold;
-color:white;
+font-weight:700;
+color:#00ffd5;
 }
 
-.order-btn{
+.card-btn{
 display:inline-block;
-margin:0 20px 20px;
+margin-top:20px;
 padding:12px 25px;
-background:orange;
+background:#00ffd5;
 color:black;
 text-decoration:none;
-border-radius:12px;
-font-weight:bold;
+border-radius:14px;
+font-weight:600;
 }
 
-/* BEFORE AFTER */
+/* STATS */
 
-.before-after{
-padding:80px 20px;
+.stats{
+padding:80px 25px;
+}
+
+.stats-wrap{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
+
+.stat{
+background:#151515;
+padding:35px;
+border-radius:25px;
 text-align:center;
 }
 
-.before-after h2{
-color:orange;
-margin-bottom:30px;
-font-size:40px;
-}
-
-.ba-cards{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
-}
-
-.ba-card{
-width:320px;
-background:#1b1b1b;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 0 15px rgba(255,165,0,0.15);
-}
-
-.ba-card img{
-width:100%;
-height:250px;
-object-fit:cover;
-}
-
-.ba-card p{
-padding:20px;
-}
-
-/* FITUR */
-
-.fitur{
-padding:80px 20px;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
-}
-
-.fitur-box{
-width:280px;
-background:#1b1b1b;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 15px rgba(255,165,0,0.15);
-}
-
-.fitur-box h3{
-color:orange;
+.stat h2{
+font-size:45px;
+color:#00ffd5;
 margin-bottom:10px;
 }
 
-/* COUNTER */
-
-.counter{
-padding:80px 20px;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
+.stat p{
+color:#bdbdbd;
 }
 
-.count-box{
-width:250px;
-background:#1b1b1b;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 15px rgba(255,165,0,0.15);
-}
-
-.count-box h2{
-font-size:40px;
-color:orange;
-margin-bottom:10px;
-}
-
-/* TESTI */
+/* TESTIMONI */
 
 .testi{
-padding:80px 20px;
+padding:100px 25px;
 text-align:center;
-}
-
-.testi h2{
-color:orange;
-margin-bottom:25px;
-font-size:40px;
 }
 
 .testi-box{
-max-width:700px;
+max-width:750px;
 margin:auto;
-background:#1b1b1b;
-padding:30px;
-border-radius:20px;
+background:#151515;
+padding:45px;
+border-radius:30px;
 }
 
-/* RATING */
-
-.rating{
-padding:80px 20px;
-text-align:center;
+.testi-box p{
+font-size:18px;
+line-height:1.8;
+color:#d7d7d7;
 }
 
-.rating h2{
-color:orange;
-margin-bottom:20px;
-}
-
-.rating-box{
-max-width:400px;
-margin:auto;
-background:#1b1b1b;
-padding:40px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(255,165,0,0.2);
-}
-
-.rating-box h1{
-font-size:60px;
-color:orange;
+.testi-box h4{
+margin-top:20px;
+color:#00ffd5;
 }
 
 /* FLOAT WA */
 
-.float-wa{
+.float{
 position:fixed;
-bottom:20px;
-right:20px;
+right:25px;
+bottom:25px;
+width:65px;
+height:65px;
 background:#25D366;
-width:60px;
-height:60px;
+border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-border-radius:50%;
 font-size:30px;
 text-decoration:none;
 color:white;
+box-shadow:0 0 25px rgba(37,211,102,0.4);
 z-index:999;
-box-shadow:0 0 20px rgba(37,211,102,0.5);
 }
 
-/* PROMO BAR */
+/* PROMO */
 
-.promo-bar{
+.promo{
 position:fixed;
 bottom:0;
 left:0;
 width:100%;
-background:orange;
+padding:14px;
+background:#00ffd5;
 color:black;
 text-align:center;
-padding:12px;
-font-weight:bold;
+font-weight:600;
 z-index:999;
 }
 
-/* NOTIF */
+/* POPUP */
 
-.notif{
+.popup{
 position:fixed;
-left:20px;
-bottom:70px;
-background:#1b1b1b;
-padding:15px 20px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(255,165,0,0.2);
-z-index:999;
-animation:fadein 1s;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+background:#151515;
+padding:18px 28px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.05);
+z-index:9999;
+animation:fade 0.5s;
 }
 
-@keyframes fadein{
+@keyframes fade{
 from{
 opacity:0;
-transform:translateY(20px);
+transform:translateX(-50%) translateY(-20px);
 }
 to{
 opacity:1;
-transform:translateY(0);
+transform:translateX(-50%) translateY(0);
 }
 }
 
 /* FOOTER */
 
 footer{
-padding:25px;
+padding:35px;
 text-align:center;
-background:#1b1b1b;
-color:#888;
+color:#8f8f8f;
+border-top:1px solid rgba(255,255,255,0.05);
+margin-top:50px;
 }
 
 </style>
@@ -501,47 +401,27 @@ color:#888;
 
 <div id="loading">
 <div class="loader"></div>
-<h2>Bangpet LCD Service</h2>
+<h2>Bangpet Service</h2>
 </div>
 
 <!-- POPUP -->
 
 <div class="popup" id="popup">
-
-<div class="popup-box">
-
-<button class="close" onclick="closePopup()">✖</button>
-
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
-
-<h2>Promo Service LCD 🔥</h2>
-
-<p>Diskon ganti LCD sampai 20% minggu ini!</p>
-
-<a href="https://wa.me/6283199803391" class="popup-btn">
-Chat Sekarang
-</a>
-
-</div>
-
-</div>
-
-<!-- ONLINE -->
-
-<div class="online-status">
-🟢 Teknisi Online • Respon ±1 Menit
+🔥 Promo Service LCD Diskon 20%
 </div>
 
 <!-- NAVBAR -->
 
 <nav>
 
-<h2>BANGPET SERVICE</h2>
+<div class="logo">
+BANGPET
+</div>
 
 <div class="menu">
 <a href="#">Home</a>
 <a href="#">Service</a>
-<a href="#">Kontak</a>
+<a href="#">Testimoni</a>
 </div>
 
 </nav>
@@ -550,15 +430,28 @@ Chat Sekarang
 
 <section class="hero">
 
-<div class="hero-text">
+<div class="glow one"></div>
+<div class="glow two"></div>
 
-<h1>SERVICE LCD HP</h1>
+<div class="hero-content">
 
-<p>Ganti LCD cepat, aman dan bergaransi 🔥</p>
+<h1>
+Service <span>LCD HP</span><br>
+Modern & Profesional
+</h1>
 
-<a href="https://wa.me/6283199803391" class="btn">
-Konsultasi WhatsApp
+<p>
+Melayani ganti LCD, touchscreen, baterai, dan service HP mati dengan pengerjaan cepat serta garansi terpercaya.
+</p>
+
+<a href="https://wa.me/6283199803391" class="hero-btn">
+Chat WhatsApp
 </a>
+
+<div class="live-box">
+<div class="dot"></div>
+Teknisi Online • Respon Cepat
+</div>
 
 </div>
 
@@ -568,7 +461,9 @@ Konsultasi WhatsApp
 
 <section class="service">
 
-<h2>LAYANAN KAMI</h2>
+<h2 class="title">
+Layanan <span>Kami</span>
+</h2>
 
 <div class="cards">
 
@@ -576,15 +471,23 @@ Konsultasi WhatsApp
 
 <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
 
+<div class="card-content">
+
 <h3>Ganti LCD</h3>
 
-<p>LCD original dan bergaransi.</p>
+<p>
+LCD original dengan kualitas premium dan bergaransi.
+</p>
 
-<span class="price">Mulai 150K</span>
+<div class="price">
+150K
+</div>
 
-<a href="https://wa.me/6283199803391" class="order-btn">
+<a href="https://wa.me/6283199803391" class="card-btn">
 Order
 </a>
+
+</div>
 
 </div>
 
@@ -592,15 +495,23 @@ Order
 
 <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
 
+<div class="card-content">
+
 <h3>Touchscreen</h3>
 
-<p>Touch error dan ghost touch.</p>
+<p>
+Mengatasi touch error, ghost touch dan layar blank.
+</p>
 
-<span class="price">Mulai 100K</span>
+<div class="price">
+100K
+</div>
 
-<a href="https://wa.me/6283199803391" class="order-btn">
+<a href="https://wa.me/6283199803391" class="card-btn">
 Order
 </a>
+
+</div>
 
 </div>
 
@@ -608,13 +519,19 @@ Order
 
 <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=1200&auto=format&fit=crop">
 
-<h3>HP Mati</h3>
+<div class="card-content">
 
-<p>Diagnosa cepat dan aman.</p>
+<h3>Service HP Mati</h3>
 
-<span class="price">Mulai 80K</span>
+<p>
+Diagnosa cepat dan aman oleh teknisi berpengalaman.
+</p>
 
-<a href="https://wa.me/6283199803391" class="order-btn">
+<div class="price">
+80K
+</div>
+
+<a href="https://wa.me/6283199803391" class="card-btn">
 Order
 </a>
 
@@ -622,68 +539,31 @@ Order
 
 </div>
 
-</section>
-
-<!-- BEFORE AFTER -->
-
-<section class="before-after">
-
-<h2>Before & After</h2>
-
-<div class="ba-cards">
-
-<div class="ba-card">
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
-<p>Sebelum Service</p>
-</div>
-
-<div class="ba-card">
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
-<p>Sesudah Service</p>
-</div>
-
 </div>
 
 </section>
 
-<!-- FITUR -->
+<!-- STATS -->
 
-<section class="fitur">
+<section class="stats">
 
-<div class="fitur-box">
-<h3>Pengerjaan Cepat</h3>
-<p>Service bisa ditunggu.</p>
-</div>
+<div class="stats-wrap">
 
-<div class="fitur-box">
-<h3>Garansi Service</h3>
-<p>Aman dan terpercaya.</p>
-</div>
-
-<div class="fitur-box">
-<h3>Harga Terjangkau</h3>
-<p>Kualitas premium harga bersahabat.</p>
-</div>
-
-</section>
-
-<!-- COUNTER -->
-
-<section class="counter">
-
-<div class="count-box">
+<div class="stat">
 <h2>2500+</h2>
-<p>HP Berhasil Diperbaiki</p>
+<p>HP Diperbaiki</p>
 </div>
 
-<div class="count-box">
+<div class="stat">
 <h2>1200+</h2>
 <p>Customer Puas</p>
 </div>
 
-<div class="count-box">
-<h2>5 Tahun</h2>
-<p>Pengalaman Service</p>
+<div class="stat">
+<h2>5+</h2>
+<p>Tahun Pengalaman</p>
+</div>
+
 </div>
 
 </section>
@@ -692,31 +572,19 @@ Order
 
 <section class="testi">
 
-<h2>Testimoni Customer</h2>
+<h2 class="title">
+Testimoni <span>Customer</span>
+</h2>
 
 <div class="testi-box">
 
 <p>
-"LCD selesai cepat dan hasilnya mantap 🔥"
+"Service cepat, hasil rapi dan LCD original. Recommended banget 🔥"
 </p>
 
-<h4>- Customer Bangpet Service</h4>
-
-</div>
-
-</section>
-
-<!-- RATING -->
-
-<section class="rating">
-
-<h2>Rating Customer</h2>
-
-<div class="rating-box">
-
-<h1>4.9 ⭐</h1>
-
-<p>Dari 1200+ Customer</p>
+<h4>
+- Customer Bangpet Service
+</h4>
 
 </div>
 
@@ -724,29 +592,20 @@ Order
 
 <!-- FLOAT WA -->
 
-<a href="https://wa.me/6283199803391" class="float-wa">
+<a href="https://wa.me/6283199803391" class="float">
 ☎
 </a>
 
 <!-- PROMO -->
 
-<div class="promo-bar">
-🔥 Promo Diskon LCD Berakhir Dalam:
-<span id="countdown"></span>
-</div>
-
-<!-- NOTIF -->
-
-<div class="notif" id="notif">
-🔥 Andi baru saja service LCD Samsung
+<div class="promo">
+🔥 Promo Service Hari Ini • Diskon Hingga 20%
 </div>
 
 <!-- FOOTER -->
 
 <footer>
-
-<p>© 2026 Bangpet LCD Service</p>
-
+© 2026 Bangpet Service • All Rights Reserved
 </footer>
 
 <script>
@@ -755,72 +614,15 @@ window.onload=function(){
 
 setTimeout(()=>{
 document.getElementById("loading").style.display="none";
-},2000);
+},1800);
 
 }
 
-/* CLOSE POPUP */
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-
-/* COUNTDOWN */
-
-var time = 3600;
-
-setInterval(()=>{
-
-let hours =
-Math.floor(time / 3600);
-
-let minutes =
-Math.floor((time % 3600) / 60);
-
-let seconds =
-time % 60;
-
-document.getElementById("countdown")
-.innerHTML =
-hours + "j " +
-minutes + "m " +
-seconds + "d";
-
-time--;
-
-},1000);
-
-/* NOTIF */
-
-const notif = [
-"🔥 Andi baru service LCD Samsung",
-"🔥 Rizky baru ganti touchscreen",
-"🔥 Dika baru service HP mati",
-"🔥 Kevin baru service iPhone",
-"🔥 Fajar baru ganti LCD Oppo"
-];
-
-function showNotif(){
-
-const box =
-document.getElementById("notif");
-
-const random =
-notif[Math.floor(Math.random()*notif.length)];
-
-box.innerHTML = random;
-
-box.style.display = "block";
+/* POPUP */
 
 setTimeout(()=>{
-box.style.display = "none";
-},8000);
-
-}
-
-showNotif();
-
-setInterval(showNotif,12000);
+document.getElementById("popup").style.display="none";
+},5000);
 
 </script>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bangpet Guppy</title>
+<title>Bangpet Panel</title>
 
 <style>
 
@@ -11,12 +11,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-font-family:sans-serif;
-background:#07131f;
+background:#060b14;
 color:white;
 overflow-x:hidden;
 }
@@ -27,311 +27,32 @@ overflow-x:hidden;
 position:fixed;
 width:100%;
 height:100%;
-background:#07131f;
+background:#060b14;
 display:flex;
 justify-content:center;
 align-items:center;
-z-index:99999;
 flex-direction:column;
+z-index:99999;
 }
 
 .loader{
 width:80px;
 height:80px;
-border:5px solid rgba(255,255,255,0.2);
-border-top:5px solid #00d9ff;
+border:5px solid rgba(255,255,255,0.1);
+border-top:5px solid #00ffcc;
 border-radius:50%;
 animation:spin 1s linear infinite;
 }
 
 #loading h2{
 margin-top:20px;
-color:#00d9ff;
+color:#00ffcc;
 }
 
 @keyframes spin{
 100%{
 transform:rotate(360deg);
 }
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
-z-index:100;
-}
-
-nav h2{
-color:#00d9ff;
-}
-
-nav .menu a{
-color:white;
-text-decoration:none;
-margin-left:15px;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-background:url('https://images.unsplash.com/photo-1524704654690-b56c05c78a00?q=80&w=1400&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-overflow:hidden;
-}
-
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-}
-
-.hero-text{
-position:relative;
-z-index:2;
-text-align:center;
-padding:20px;
-}
-
-.hero-text h1{
-font-size:55px;
-color:#00d9ff;
-text-shadow:0 0 20px #00d9ff;
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-from{
-text-shadow:0 0 10px #00d9ff;
-}
-to{
-text-shadow:0 0 30px #00d9ff;
-}
-}
-
-.hero-text p{
-margin-top:15px;
-font-size:18px;
-color:#ddd;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 30px;
-background:#00d9ff;
-color:black;
-text-decoration:none;
-border-radius:12px;
-font-weight:bold;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.1);
-}
-
-/* BUBBLE */
-
-.bubble{
-position:absolute;
-bottom:-150px;
-background:rgba(255,255,255,0.25);
-border-radius:50%;
-animation:bubble linear infinite;
-z-index:1;
-}
-
-.x1{
-left:10%;
-width:30px;
-height:30px;
-animation-duration:8s;
-}
-
-.x2{
-left:30%;
-width:20px;
-height:20px;
-animation-duration:10s;
-}
-
-.x3{
-left:50%;
-width:40px;
-height:40px;
-animation-duration:12s;
-}
-
-.x4{
-left:70%;
-width:25px;
-height:25px;
-animation-duration:9s;
-}
-
-.x5{
-left:90%;
-width:35px;
-height:35px;
-animation-duration:11s;
-}
-
-@keyframes bubble{
-0%{
-transform:translateY(0);
-opacity:0;
-}
-50%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
-
-/* PRODUK */
-
-.produk{
-padding:80px 20px;
-}
-
-.produk h2{
-text-align:center;
-margin-bottom:40px;
-color:#00d9ff;
-font-size:35px;
-}
-
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-}
-
-.card{
-width:300px;
-background:#0d1b29;
-border-radius:20px;
-overflow:hidden;
-text-decoration:none;
-color:white;
-transition:0.3s;
-box-shadow:0 0 15px rgba(0,217,255,0.2);
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(0,217,255,0.5);
-}
-
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.card h3{
-padding:15px 15px 5px;
-color:#00d9ff;
-}
-
-.card p{
-padding:0 15px;
-color:#ccc;
-}
-
-.card span{
-display:block;
-padding:15px;
-font-weight:bold;
-}
-
-/* TESTI */
-
-.testi{
-padding:80px 20px;
-text-align:center;
-}
-
-.testi h2{
-color:#00d9ff;
-margin-bottom:25px;
-font-size:35px;
-}
-
-.testi-box{
-max-width:600px;
-margin:auto;
-background:#0d1b29;
-padding:30px;
-border-radius:20px;
-}
-
-/* SOSMED */
-
-.sosmed{
-padding:80px 20px;
-text-align:center;
-}
-
-.sosmed h2{
-color:#00d9ff;
-margin-bottom:25px;
-font-size:35px;
-}
-
-.social-btns{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.social-btns a{
-padding:14px 25px;
-background:#00d9ff;
-color:black;
-text-decoration:none;
-border-radius:12px;
-font-weight:bold;
-}
-
-/* FLOATING WA */
-
-.float-wa{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-width:60px;
-height:60px;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-font-size:30px;
-text-decoration:none;
-z-index:999;
-box-shadow:0 0 20px rgba(37,211,102,0.5);
 }
 
 /* POPUP */
@@ -352,12 +73,13 @@ z-index:9999;
 .popup-box{
 width:90%;
 max-width:350px;
-background:#0d1b29;
+background:#0d1624;
 border-radius:25px;
 overflow:hidden;
 text-align:center;
 position:relative;
 animation:popup 0.4s ease;
+box-shadow:0 0 20px rgba(0,255,204,0.3);
 }
 
 .popup-box img{
@@ -368,18 +90,19 @@ object-fit:cover;
 
 .popup-box h2{
 margin-top:15px;
-color:#00d9ff;
+color:#00ffcc;
 }
 
 .popup-box p{
 padding:10px 20px;
+color:#ccc;
 }
 
 .popup-btn{
 display:inline-block;
 margin:20px;
 padding:12px 25px;
-background:#00d9ff;
+background:#00ffcc;
 color:black;
 text-decoration:none;
 border-radius:12px;
@@ -408,29 +131,180 @@ opacity:1;
 }
 }
 
-/* NOTIF ORDER */
+/* NAVBAR */
 
-.order-popup{
+nav{
 position:fixed;
-bottom:100px;
-left:20px;
-background:#0d1b29;
-padding:15px 20px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(0,217,255,0.3);
+top:0;
+width:100%;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
 z-index:999;
-animation:fadein 1s;
 }
 
-@keyframes fadein{
+nav h2{
+color:#00ffcc;
+text-shadow:0 0 10px #00ffcc;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(to bottom,#060b14,#08121f);
+}
+
+.hero-text h1{
+font-size:55px;
+color:#00ffcc;
+text-shadow:0 0 20px #00ffcc;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
 from{
-opacity:0;
-transform:translateY(20px);
+text-shadow:0 0 10px #00ffcc;
 }
 to{
-opacity:1;
-transform:translateY(0);
+text-shadow:0 0 30px #00ffcc;
 }
+}
+
+.hero-text p{
+margin-top:15px;
+color:#bbb;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:#00ffcc;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* PANEL */
+
+.panel{
+padding:80px 20px;
+}
+
+.panel h2{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+color:#00ffcc;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.card{
+width:300px;
+background:#0d1624;
+border-radius:20px;
+padding:30px;
+text-align:center;
+transition:0.3s;
+box-shadow:0 0 15px rgba(0,255,204,0.15);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,255,204,0.4);
+}
+
+.card h3{
+color:#00ffcc;
+font-size:30px;
+}
+
+.price{
+font-size:40px;
+margin:20px 0;
+font-weight:bold;
+}
+
+.card p{
+margin:10px 0;
+color:#bbb;
+}
+
+.order-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#00ffcc;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+}
+
+/* TERMINAL */
+
+.terminal{
+padding:80px 20px;
+}
+
+.terminal-box{
+max-width:800px;
+margin:auto;
+background:black;
+padding:25px;
+border-radius:20px;
+font-family:monospace;
+color:#00ff66;
+line-height:2;
+box-shadow:0 0 20px rgba(0,255,100,0.2);
+}
+
+/* FLOAT WA */
+
+.float-wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:60px;
+height:60px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:30px;
+text-decoration:none;
+color:white;
+z-index:999;
+box-shadow:0 0 20px rgba(37,211,102,0.5);
 }
 
 /* FOOTER */
@@ -438,8 +312,8 @@ transform:translateY(0);
 footer{
 padding:25px;
 text-align:center;
-background:#081018;
-color:#aaa;
+background:#08121f;
+color:#888;
 }
 
 </style>
@@ -452,7 +326,7 @@ color:#aaa;
 
 <div class="loader"></div>
 
-<h2>Bangpet Guppy</h2>
+<h2>Bangpet Panel</h2>
 
 </div>
 
@@ -464,11 +338,13 @@ color:#aaa;
 
 <button class="close" onclick="closePopup()">✖</button>
 
-<img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?q=80&w=1400&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop">
 
-<h2>Promo Guppy Premium 🔥</h2>
+<h2>Promo Panel Hosting 🔥</h2>
 
-<p>Diskon minggu ini sampai 20%</p>
+<p>
+Diskon panel unlimited minggu ini!
+</p>
 
 <a href="https://wa.me/6283199803391" class="popup-btn">
 Order Sekarang
@@ -482,11 +358,11 @@ Order Sekarang
 
 <nav>
 
-<h2>Bangpet Guppy</h2>
+<h2>BANGPET PANEL</h2>
 
 <div class="menu">
 <a href="#">Home</a>
-<a href="#">Produk</a>
+<a href="#">Panel</a>
 <a href="#">Kontak</a>
 </div>
 
@@ -496,105 +372,93 @@ Order Sekarang
 
 <section class="hero">
 
-<div class="overlay"></div>
-
-<div class="bubble x1"></div>
-<div class="bubble x2"></div>
-<div class="bubble x3"></div>
-<div class="bubble x4"></div>
-<div class="bubble x5"></div>
-
 <div class="hero-text">
 
-<h1>Premium Guppy Fish</h1>
+<h1>PREMIUM PANEL HOSTING</h1>
 
-<p>Ikan sehat, aktif dan warna premium.</p>
+<p>
+Server cepat, stabil dan anti delay 🔥
+</p>
 
 <a href="https://wa.me/6283199803391" class="btn">
-Order WhatsApp
+Order Sekarang
 </a>
 
 </div>
 
 </section>
 
-<!-- PRODUK -->
+<!-- PANEL -->
 
-<section class="produk">
+<section class="panel">
 
-<h2>Jenis Guppy</h2>
+<h2>PAKET PANEL</h2>
 
 <div class="cards">
 
-<a href="https://wa.me/6283199803391" class="card">
+<div class="card">
 
-<img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=1200&auto=format&fit=crop">
+<h3>1 GB</h3>
 
-<h3>Blue Moscow</h3>
+<div class="price">5K</div>
 
-<p>Warna biru premium elegan.</p>
+<p>CPU Unlimited</p>
+<p>Anti Delay</p>
+<p>Server Stabil</p>
 
-<span>Rp15.000/pasang</span>
-
+<a href="https://wa.me/6283199803391" class="order-btn">
+Order
 </a>
 
-<a href="https://wa.me/6283199803391" class="card">
+</div>
 
-<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop">
+<div class="card">
 
-<h3>Red Dragon</h3>
+<h3>5 GB</h3>
 
-<p>Corak merah premium.</p>
+<div class="price">15K</div>
 
-<span>Rp20.000/pasang</span>
+<p>Fast Server</p>
+<p>Premium Access</p>
+<p>24/7 Support</p>
 
+<a href="https://wa.me/6283199803391" class="order-btn">
+Order
 </a>
 
-<a href="https://wa.me/6283199803391" class="card">
+</div>
 
-<img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1200&auto=format&fit=crop">
+<div class="card">
 
-<h3>Yellow Cobra</h3>
+<h3>UNLIMITED</h3>
 
-<p>Corak unik dan aktif.</p>
+<div class="price">25K</div>
 
-<span>Rp18.000/pasang</span>
+<p>Unlimited RAM</p>
+<p>Unlimited CPU</p>
+<p>Best Seller 🔥</p>
 
+<a href="https://wa.me/6283199803391" class="order-btn">
+Order
 </a>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- TESTI -->
+<!-- TERMINAL -->
 
-<section class="testi">
+<section class="terminal">
 
-<h2>Testimoni Customer</h2>
+<div class="terminal-box">
 
-<div class="testi-box">
-
-<p>"Ikan sehat dan pengiriman aman 🔥"</p>
-
-<h4>- Customer Bangpet Guppy</h4>
-
-</div>
-
-</section>
-
-<!-- SOSMED -->
-
-<section class="sosmed">
-
-<h2>Follow Kami</h2>
-
-<div class="social-btns">
-
-<a href="https://wa.me/6283199803391">WhatsApp</a>
-
-<a href="#">TikTok</a>
-
-<a href="#">Shopee</a>
+<p>> Starting server...</p>
+<p>> Loading node modules...</p>
+<p>> Server online successfully</p>
+<p>> Anti DDoS enabled</p>
+<p>> All systems running 🔥</p>
 
 </div>
 
@@ -606,30 +470,26 @@ Order WhatsApp
 ☎
 </a>
 
-<!-- ORDER POPUP -->
-
-<div class="order-popup" id="orderPopup">
-🔥 Rizky dari Medan baru saja membeli Red Dragon
-</div>
-
 <!-- FOOTER -->
 
 <footer>
 
-<p>© 2026 Bangpet Guppy</p>
+<p>© 2026 Bangpet Panel Hosting</p>
 
 </footer>
 
 <script>
 
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-
 window.onload=function(){
+
 setTimeout(()=>{
 document.getElementById("loading").style.display="none";
 },2000);
+
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
 }
 
 </script>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bangpet Panel</title>
+<title>Bangpet LCD Service</title>
 
 <style>
 
@@ -16,7 +16,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#060b14;
+background:#111111;
 color:white;
 overflow-x:hidden;
 }
@@ -27,7 +27,7 @@ overflow-x:hidden;
 position:fixed;
 width:100%;
 height:100%;
-background:#060b14;
+background:#111111;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -39,20 +39,20 @@ z-index:99999;
 width:80px;
 height:80px;
 border:5px solid rgba(255,255,255,0.1);
-border-top:5px solid #00ffcc;
+border-top:5px solid orange;
 border-radius:50%;
 animation:spin 1s linear infinite;
-}
-
-#loading h2{
-margin-top:20px;
-color:#00ffcc;
 }
 
 @keyframes spin{
 100%{
 transform:rotate(360deg);
 }
+}
+
+#loading h2{
+margin-top:20px;
+color:orange;
 }
 
 /* POPUP */
@@ -73,13 +73,13 @@ z-index:9999;
 .popup-box{
 width:90%;
 max-width:350px;
-background:#0d1624;
+background:#1b1b1b;
 border-radius:25px;
 overflow:hidden;
 text-align:center;
 position:relative;
 animation:popup 0.4s ease;
-box-shadow:0 0 20px rgba(0,255,204,0.3);
+box-shadow:0 0 20px rgba(255,165,0,0.3);
 }
 
 .popup-box img{
@@ -90,7 +90,7 @@ object-fit:cover;
 
 .popup-box h2{
 margin-top:15px;
-color:#00ffcc;
+color:orange;
 }
 
 .popup-box p{
@@ -102,7 +102,7 @@ color:#ccc;
 display:inline-block;
 margin:20px;
 padding:12px 25px;
-background:#00ffcc;
+background:orange;
 color:black;
 text-decoration:none;
 border-radius:12px;
@@ -147,8 +147,8 @@ z-index:999;
 }
 
 nav h2{
-color:#00ffcc;
-text-shadow:0 0 10px #00ffcc;
+color:orange;
+text-shadow:0 0 10px orange;
 }
 
 .menu a{
@@ -166,22 +166,22 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
-background:linear-gradient(to bottom,#060b14,#08121f);
+background:linear-gradient(to bottom,#111111,#1b1b1b);
 }
 
 .hero-text h1{
 font-size:55px;
-color:#00ffcc;
-text-shadow:0 0 20px #00ffcc;
+color:orange;
+text-shadow:0 0 20px orange;
 animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
 from{
-text-shadow:0 0 10px #00ffcc;
+text-shadow:0 0 10px orange;
 }
 to{
-text-shadow:0 0 30px #00ffcc;
+text-shadow:0 0 30px orange;
 }
 }
 
@@ -195,7 +195,7 @@ font-size:18px;
 display:inline-block;
 margin-top:25px;
 padding:14px 30px;
-background:#00ffcc;
+background:orange;
 color:black;
 text-decoration:none;
 border-radius:12px;
@@ -207,17 +207,17 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
-/* PANEL */
+/* SERVICES */
 
-.panel{
+.service{
 padding:80px 20px;
 }
 
-.panel h2{
+.service h2{
 text-align:center;
 font-size:40px;
 margin-bottom:40px;
-color:#00ffcc;
+color:orange;
 }
 
 .cards{
@@ -229,62 +229,96 @@ gap:25px;
 
 .card{
 width:300px;
-background:#0d1624;
+background:#1b1b1b;
 border-radius:20px;
-padding:30px;
-text-align:center;
+overflow:hidden;
 transition:0.3s;
-box-shadow:0 0 15px rgba(0,255,204,0.15);
+box-shadow:0 0 15px rgba(255,165,0,0.15);
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 25px rgba(0,255,204,0.4);
+box-shadow:0 0 25px rgba(255,165,0,0.4);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
 .card h3{
-color:#00ffcc;
-font-size:30px;
-}
-
-.price{
-font-size:40px;
-margin:20px 0;
-font-weight:bold;
+padding:20px 20px 10px;
+color:orange;
 }
 
 .card p{
-margin:10px 0;
+padding:0 20px;
 color:#bbb;
+}
+
+.price{
+display:block;
+padding:20px;
+font-size:28px;
+font-weight:bold;
+color:white;
 }
 
 .order-btn{
 display:inline-block;
-margin-top:20px;
+margin:0 20px 20px;
 padding:12px 25px;
-background:#00ffcc;
+background:orange;
 color:black;
 text-decoration:none;
 border-radius:12px;
 font-weight:bold;
 }
 
-/* TERMINAL */
+/* FITUR */
 
-.terminal{
+.fitur{
 padding:80px 20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
 }
 
-.terminal-box{
-max-width:800px;
-margin:auto;
-background:black;
-padding:25px;
+.fitur-box{
+width:280px;
+background:#1b1b1b;
+padding:30px;
 border-radius:20px;
-font-family:monospace;
-color:#00ff66;
-line-height:2;
-box-shadow:0 0 20px rgba(0,255,100,0.2);
+text-align:center;
+box-shadow:0 0 15px rgba(255,165,0,0.15);
+}
+
+.fitur-box h3{
+color:orange;
+margin-bottom:10px;
+}
+
+/* TESTI */
+
+.testi{
+padding:80px 20px;
+text-align:center;
+}
+
+.testi h2{
+color:orange;
+margin-bottom:25px;
+font-size:40px;
+}
+
+.testi-box{
+max-width:700px;
+margin:auto;
+background:#1b1b1b;
+padding:30px;
+border-radius:20px;
 }
 
 /* FLOAT WA */
@@ -312,7 +346,7 @@ box-shadow:0 0 20px rgba(37,211,102,0.5);
 footer{
 padding:25px;
 text-align:center;
-background:#08121f;
+background:#1b1b1b;
 color:#888;
 }
 
@@ -326,7 +360,7 @@ color:#888;
 
 <div class="loader"></div>
 
-<h2>Bangpet Panel</h2>
+<h2>Bangpet LCD Service</h2>
 
 </div>
 
@@ -338,16 +372,16 @@ color:#888;
 
 <button class="close" onclick="closePopup()">✖</button>
 
-<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
 
-<h2>Promo Panel Hosting 🔥</h2>
+<h2>Promo Service LCD 🔥</h2>
 
 <p>
-Diskon panel unlimited minggu ini!
+Diskon ganti LCD sampai 20% minggu ini!
 </p>
 
 <a href="https://wa.me/6283199803391" class="popup-btn">
-Order Sekarang
+Chat Sekarang
 </a>
 
 </div>
@@ -358,11 +392,11 @@ Order Sekarang
 
 <nav>
 
-<h2>BANGPET PANEL</h2>
+<h2>BANGPET SERVICE</h2>
 
 <div class="menu">
 <a href="#">Home</a>
-<a href="#">Panel</a>
+<a href="#">Service</a>
 <a href="#">Kontak</a>
 </div>
 
@@ -374,53 +408,37 @@ Order Sekarang
 
 <div class="hero-text">
 
-<h1>PREMIUM PANEL HOSTING</h1>
+<h1>SERVICE LCD HP</h1>
 
 <p>
-Server cepat, stabil dan anti delay 🔥
+Ganti LCD cepat, aman dan bergaransi 🔥
 </p>
 
 <a href="https://wa.me/6283199803391" class="btn">
-Order Sekarang
+Konsultasi WhatsApp
 </a>
 
 </div>
 
 </section>
 
-<!-- PANEL -->
+<!-- SERVICE -->
 
-<section class="panel">
+<section class="service">
 
-<h2>PAKET PANEL</h2>
+<h2>LAYANAN KAMI</h2>
 
 <div class="cards">
 
 <div class="card">
 
-<h3>1 GB</h3>
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
 
-<div class="price">5K</div>
+<h3>Ganti LCD</h3>
 
-<p>CPU Unlimited</p>
-<p>Anti Delay</p>
-<p>Server Stabil</p>
+<p>LCD original dan bergaransi.</p>
 
-<a href="https://wa.me/6283199803391" class="order-btn">
-Order
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>5 GB</h3>
-
-<div class="price">15K</div>
-
-<p>Fast Server</p>
-<p>Premium Access</p>
-<p>24/7 Support</p>
+<span class="price">Mulai 150K</span>
 
 <a href="https://wa.me/6283199803391" class="order-btn">
 Order
@@ -430,13 +448,29 @@ Order
 
 <div class="card">
 
-<h3>UNLIMITED</h3>
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
 
-<div class="price">25K</div>
+<h3>Service Touchscreen</h3>
 
-<p>Unlimited RAM</p>
-<p>Unlimited CPU</p>
-<p>Best Seller 🔥</p>
+<p>Touch error, ghost touch dan blank.</p>
+
+<span class="price">Mulai 100K</span>
+
+<a href="https://wa.me/6283199803391" class="order-btn">
+Order
+</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=1200&auto=format&fit=crop">
+
+<h3>Service HP Mati</h3>
+
+<p>Diagnosa cepat dan aman.</p>
+
+<span class="price">Mulai 80K</span>
 
 <a href="https://wa.me/6283199803391" class="order-btn">
 Order
@@ -448,23 +482,46 @@ Order
 
 </section>
 
-<!-- TERMINAL -->
+<!-- FITUR -->
 
-<section class="terminal">
+<section class="fitur">
 
-<div class="terminal-box">
+<div class="fitur-box">
+<h3>Pengerjaan Cepat</h3>
+<p>Service bisa ditunggu.</p>
+</div>
 
-<p>> Starting server...</p>
-<p>> Loading node modules...</p>
-<p>> Server online successfully</p>
-<p>> Anti DDoS enabled</p>
-<p>> All systems running 🔥</p>
+<div class="fitur-box">
+<h3>Garansi Service</h3>
+<p>Aman dan terpercaya.</p>
+</div>
+
+<div class="fitur-box">
+<h3>Harga Terjangkau</h3>
+<p>Kualitas premium harga bersahabat.</p>
+</div>
+
+</section>
+
+<!-- TESTI -->
+
+<section class="testi">
+
+<h2>Testimoni Customer</h2>
+
+<div class="testi-box">
+
+<p>
+"LCD selesai cepat dan hasilnya mantap 🔥"
+</p>
+
+<h4>- Customer Bangpet Service</h4>
 
 </div>
 
 </section>
 
-<!-- FLOATING WA -->
+<!-- FLOAT WA -->
 
 <a href="https://wa.me/6283199803391" class="float-wa">
 ☎
@@ -474,7 +531,7 @@ Order
 
 <footer>
 
-<p>© 2026 Bangpet Panel Hosting</p>
+<p>© 2026 Bangpet LCD Service</p>
 
 </footer>
 

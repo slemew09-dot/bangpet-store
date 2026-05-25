@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bangpet Service</title>
+<title>Bangpet Topup</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -18,7 +18,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0f0f0f;
+background:#090909;
 color:white;
 overflow-x:hidden;
 }
@@ -29,7 +29,7 @@ overflow-x:hidden;
 position:fixed;
 width:100%;
 height:100%;
-background:#0f0f0f;
+background:#090909;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -38,10 +38,10 @@ z-index:99999;
 }
 
 .loader{
-width:70px;
-height:70px;
-border:4px solid rgba(255,255,255,0.1);
-border-top:4px solid #00ffd5;
+width:75px;
+height:75px;
+border:5px solid rgba(255,255,255,0.1);
+border-top:5px solid #00ffe1;
 border-radius:50%;
 animation:spin 1s linear infinite;
 }
@@ -54,8 +54,7 @@ transform:rotate(360deg);
 
 #loading h2{
 margin-top:20px;
-color:#00ffd5;
-font-weight:600;
+color:#00ffe1;
 }
 
 /* NAVBAR */
@@ -68,17 +67,17 @@ padding:18px 25px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(15,15,15,0.7);
+background:rgba(0,0,0,0.5);
 backdrop-filter:blur(12px);
 z-index:999;
 border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .logo{
-font-size:26px;
+font-size:28px;
 font-weight:700;
-color:#00ffd5;
-letter-spacing:1px;
+color:#00ffe1;
+text-shadow:0 0 15px #00ffe1;
 }
 
 .menu a{
@@ -90,7 +89,7 @@ transition:0.3s;
 }
 
 .menu a:hover{
-color:#00ffd5;
+color:#00ffe1;
 }
 
 /* HERO */
@@ -100,19 +99,20 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+text-align:center;
 padding:120px 25px 80px;
 position:relative;
+overflow:hidden;
 }
 
 .glow{
 position:absolute;
 width:350px;
 height:350px;
-background:#00ffd5;
-filter:blur(140px);
-opacity:0.12;
+background:#00ffe1;
 border-radius:50%;
-z-index:0;
+filter:blur(150px);
+opacity:0.15;
 }
 
 .glow.one{
@@ -128,57 +128,53 @@ right:-100px;
 .hero-content{
 position:relative;
 z-index:1;
-text-align:center;
-max-width:700px;
+max-width:750px;
 }
 
 .hero-content h1{
 font-size:65px;
 line-height:1.1;
-font-weight:700;
 margin-bottom:20px;
 }
 
-.hero-content h1 span{
-color:#00ffd5;
+.hero-content span{
+color:#00ffe1;
 }
 
 .hero-content p{
-color:#bcbcbc;
+color:#cfcfcf;
 font-size:18px;
-line-height:1.7;
+line-height:1.8;
 margin-bottom:35px;
 }
 
 .hero-btn{
 display:inline-block;
 padding:16px 35px;
-background:#00ffd5;
+background:#00ffe1;
 color:black;
 text-decoration:none;
 border-radius:50px;
-font-weight:600;
+font-weight:700;
+box-shadow:0 0 25px rgba(0,255,225,0.3);
 transition:0.3s;
-box-shadow:0 0 25px rgba(0,255,213,0.3);
 }
 
 .hero-btn:hover{
 transform:translateY(-5px);
 }
 
-/* LIVE STATUS */
+/* STATUS */
 
-.live-box{
+.status{
 margin-top:30px;
 display:inline-flex;
 align-items:center;
 gap:10px;
 padding:12px 22px;
-background:#161616;
-border:1px solid rgba(255,255,255,0.05);
+background:#141414;
 border-radius:50px;
-font-size:14px;
-color:#d9d9d9;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .dot{
@@ -189,80 +185,73 @@ border-radius:50%;
 box-shadow:0 0 15px #00ff66;
 }
 
-/* SERVICE */
+/* GAME SECTION */
 
-.service{
+.games{
 padding:100px 25px;
 }
 
 .title{
 text-align:center;
-font-size:42px;
+font-size:45px;
 margin-bottom:60px;
 }
 
 .title span{
-color:#00ffd5;
+color:#00ffe1;
 }
 
-.cards{
+.game-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 max-width:1200px;
 margin:auto;
 }
 
-.card{
-background:#151515;
+.game-card{
+background:#141414;
 border-radius:25px;
 overflow:hidden;
 transition:0.4s;
 border:1px solid rgba(255,255,255,0.04);
 }
 
-.card:hover{
+.game-card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 40px rgba(0,255,213,0.08);
+box-shadow:0 0 35px rgba(0,255,225,0.1);
 }
 
-.card img{
+.game-card img{
 width:100%;
-height:220px;
+height:250px;
 object-fit:cover;
 }
 
-.card-content{
-padding:25px;
+.game-content{
+padding:22px;
 }
 
-.card-content h3{
+.game-content h3{
 font-size:24px;
 margin-bottom:10px;
 }
 
-.card-content p{
-color:#bbbbbb;
-font-size:15px;
+.game-content p{
+color:#bdbdbd;
+font-size:14px;
 line-height:1.7;
 }
 
-.price{
-margin-top:18px;
-font-size:28px;
-font-weight:700;
-color:#00ffd5;
-}
-
-.card-btn{
+.order-btn{
 display:inline-block;
 margin-top:20px;
-padding:12px 25px;
-background:#00ffd5;
+padding:12px 22px;
+background:#00ffe1;
 color:black;
 text-decoration:none;
 border-radius:14px;
-font-weight:600;
+font-weight:700;
 }
 
 /* STATS */
@@ -280,7 +269,7 @@ margin:auto;
 }
 
 .stat{
-background:#151515;
+background:#141414;
 padding:35px;
 border-radius:25px;
 text-align:center;
@@ -288,7 +277,7 @@ text-align:center;
 
 .stat h2{
 font-size:45px;
-color:#00ffd5;
+color:#00ffe1;
 margin-bottom:10px;
 }
 
@@ -296,7 +285,7 @@ margin-bottom:10px;
 color:#bdbdbd;
 }
 
-/* TESTIMONI */
+/* TESTI */
 
 .testi{
 padding:100px 25px;
@@ -306,7 +295,7 @@ text-align:center;
 .testi-box{
 max-width:750px;
 margin:auto;
-background:#151515;
+background:#141414;
 padding:45px;
 border-radius:30px;
 }
@@ -319,7 +308,7 @@ color:#d7d7d7;
 
 .testi-box h4{
 margin-top:20px;
-color:#00ffd5;
+color:#00ffe1;
 }
 
 /* FLOAT WA */
@@ -350,10 +339,10 @@ bottom:0;
 left:0;
 width:100%;
 padding:14px;
-background:#00ffd5;
+background:#00ffe1;
 color:black;
 text-align:center;
-font-weight:600;
+font-weight:700;
 z-index:999;
 }
 
@@ -364,7 +353,7 @@ position:fixed;
 top:20px;
 left:50%;
 transform:translateX(-50%);
-background:#151515;
+background:#141414;
 padding:18px 28px;
 border-radius:18px;
 border:1px solid rgba(255,255,255,0.05);
@@ -383,6 +372,31 @@ transform:translateX(-50%) translateY(0);
 }
 }
 
+/* LIVE ORDER */
+
+.live-order{
+position:fixed;
+left:20px;
+bottom:80px;
+background:#141414;
+padding:14px 22px;
+border-radius:18px;
+z-index:999;
+box-shadow:0 0 20px rgba(0,255,225,0.1);
+animation:fade2 1s;
+}
+
+@keyframes fade2{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 /* FOOTER */
 
 footer{
@@ -390,7 +404,7 @@ padding:35px;
 text-align:center;
 color:#8f8f8f;
 border-top:1px solid rgba(255,255,255,0.05);
-margin-top:50px;
+margin-top:60px;
 }
 
 </style>
@@ -401,13 +415,13 @@ margin-top:50px;
 
 <div id="loading">
 <div class="loader"></div>
-<h2>Bangpet Service</h2>
+<h2>Bangpet Topup</h2>
 </div>
 
 <!-- POPUP -->
 
 <div class="popup" id="popup">
-🔥 Promo Service LCD Diskon 20%
+🔥 Promo Topup Hari Ini Diskon 20%
 </div>
 
 <!-- NAVBAR -->
@@ -415,13 +429,13 @@ margin-top:50px;
 <nav>
 
 <div class="logo">
-BANGPET
+BANGPET TOPUP
 </div>
 
 <div class="menu">
 <a href="#">Home</a>
-<a href="#">Service</a>
-<a href="#">Testimoni</a>
+<a href="#">Games</a>
+<a href="#">Testi</a>
 </div>
 
 </nav>
@@ -436,103 +450,110 @@ BANGPET
 <div class="hero-content">
 
 <h1>
-Service <span>LCD HP</span><br>
-Modern & Profesional
+Topup Game <span>Murah & Cepat</span>
 </h1>
 
 <p>
-Melayani ganti LCD, touchscreen, baterai, dan service HP mati dengan pengerjaan cepat serta garansi terpercaya.
+Topup Free Fire, Mobile Legends, PUBG, Valorant dan game lainnya dengan proses super cepat dan aman.
 </p>
 
 <a href="https://wa.me/6283199803391" class="hero-btn">
-Chat WhatsApp
+Order Sekarang
 </a>
 
-<div class="live-box">
+<div class="status">
 <div class="dot"></div>
-Teknisi Online • Respon Cepat
+Admin Online • Fast Respon
 </div>
 
 </div>
 
 </section>
 
-<!-- SERVICE -->
+<!-- GAMES -->
 
-<section class="service">
+<section class="games">
 
 <h2 class="title">
-Layanan <span>Kami</span>
+Topup <span>Games</span>
 </h2>
 
-<div class="cards">
+<div class="game-grid">
 
-<div class="card">
+<div class="game-card">
 
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
 
-<div class="card-content">
+<div class="game-content">
 
-<h3>Ganti LCD</h3>
+<h3>Free Fire</h3>
 
 <p>
-LCD original dengan kualitas premium dan bergaransi.
+Topup diamond murah dan cepat masuk.
 </p>
 
-<div class="price">
-150K
-</div>
-
-<a href="https://wa.me/6283199803391" class="card-btn">
-Order
+<a href="https://wa.me/6283199803391" class="order-btn">
+Topup
 </a>
 
 </div>
 
 </div>
 
-<div class="card">
+<div class="game-card">
 
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
 
-<div class="card-content">
+<div class="game-content">
 
-<h3>Touchscreen</h3>
+<h3>Mobile Legends</h3>
 
 <p>
-Mengatasi touch error, ghost touch dan layar blank.
+Diamond ML instant dan terpercaya.
 </p>
 
-<div class="price">
-100K
-</div>
-
-<a href="https://wa.me/6283199803391" class="card-btn">
-Order
+<a href="https://wa.me/6283199803391" class="order-btn">
+Topup
 </a>
 
 </div>
 
 </div>
 
-<div class="card">
+<div class="game-card">
 
-<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop">
 
-<div class="card-content">
+<div class="game-content">
 
-<h3>Service HP Mati</h3>
+<h3>PUBG Mobile</h3>
 
 <p>
-Diagnosa cepat dan aman oleh teknisi berpengalaman.
+UC PUBG harga reseller.
 </p>
 
-<div class="price">
-80K
+<a href="https://wa.me/6283199803391" class="order-btn">
+Topup
+</a>
+
 </div>
 
-<a href="https://wa.me/6283199803391" class="card-btn">
-Order
+</div>
+
+<div class="game-card">
+
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop">
+
+<div class="game-content">
+
+<h3>Valorant</h3>
+
+<p>
+VP Valorant murah dan aman.
+</p>
+
+<a href="https://wa.me/6283199803391" class="order-btn">
+Topup
 </a>
 
 </div>
@@ -550,18 +571,18 @@ Order
 <div class="stats-wrap">
 
 <div class="stat">
-<h2>2500+</h2>
-<p>HP Diperbaiki</p>
+<h2>5000+</h2>
+<p>Transaksi Selesai</p>
 </div>
 
 <div class="stat">
-<h2>1200+</h2>
-<p>Customer Puas</p>
+<h2>3000+</h2>
+<p>Customer Aktif</p>
 </div>
 
 <div class="stat">
-<h2>5+</h2>
-<p>Tahun Pengalaman</p>
+<h2>24 Jam</h2>
+<p>Fast Respon</p>
 </div>
 
 </div>
@@ -579,16 +600,22 @@ Testimoni <span>Customer</span>
 <div class="testi-box">
 
 <p>
-"Service cepat, hasil rapi dan LCD original. Recommended banget 🔥"
+"Diamond masuk cepat dan admin ramah banget 🔥"
 </p>
 
 <h4>
-- Customer Bangpet Service
+- Customer Bangpet Topup
 </h4>
 
 </div>
 
 </section>
+
+<!-- LIVE ORDER -->
+
+<div class="live-order" id="liveOrder">
+🔥 Andi baru topup 140 Diamond FF
+</div>
 
 <!-- FLOAT WA -->
 
@@ -599,16 +626,18 @@ Testimoni <span>Customer</span>
 <!-- PROMO -->
 
 <div class="promo">
-🔥 Promo Service Hari Ini • Diskon Hingga 20%
+🔥 Promo Topup Hari Ini • Diamond Murah • Fast Process
 </div>
 
 <!-- FOOTER -->
 
 <footer>
-© 2026 Bangpet Service • All Rights Reserved
+© 2026 Bangpet Topup • All Rights Reserved
 </footer>
 
 <script>
+
+/* LOADING */
 
 window.onload=function(){
 
@@ -623,6 +652,28 @@ document.getElementById("loading").style.display="none";
 setTimeout(()=>{
 document.getElementById("popup").style.display="none";
 },5000);
+
+/* LIVE ORDER */
+
+const orders = [
+"🔥 Andi baru topup 140 Diamond FF",
+"🔥 Rizky baru beli 86 Diamond ML",
+"🔥 Kevin baru topup UC PUBG",
+"🔥 Dika baru beli VP Valorant",
+"🔥 Fajar baru topup Weekly ML"
+];
+
+function changeOrder(){
+
+const random =
+orders[Math.floor(Math.random()*orders.length)];
+
+document.getElementById("liveOrder")
+.innerHTML = random;
+
+}
+
+setInterval(changeOrder,7000);
 
 </script>
 

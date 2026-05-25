@@ -1,18 +1,367 @@
-<!-- SECTION TOPUP GAME -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangpet Topup</title>
 
-<section class="topup-section">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f3f4f6;
+color:#111;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+background:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+color:#00b894;
+}
+
+.nav-right{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.login-btn{
+padding:10px 18px;
+border-radius:12px;
+background:#111;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+padding:25px 20px;
+}
+
+.banner{
+background:linear-gradient(135deg,#00c896,#00a8ff);
+border-radius:30px;
+padding:40px 30px;
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.banner::before{
+content:'';
+position:absolute;
+width:250px;
+height:250px;
+background:rgba(255,255,255,0.15);
+border-radius:50%;
+top:-100px;
+right:-100px;
+}
+
+.banner h1{
+font-size:42px;
+line-height:1.2;
+margin-bottom:15px;
+position:relative;
+z-index:1;
+}
+
+.banner p{
+font-size:16px;
+line-height:1.8;
+position:relative;
+z-index:1;
+}
+
+/* SEARCH */
+
+.search-box{
+margin-top:20px;
+background:white;
+padding:14px 18px;
+border-radius:18px;
+display:flex;
+align-items:center;
+gap:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.search-box input{
+border:none;
+outline:none;
+width:100%;
+font-size:16px;
+}
+
+/* TITLE */
+
+.section-title{
+padding:30px 20px 15px;
+font-size:36px;
+font-weight:800;
+}
+
+/* GRID */
+
+.game-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:18px;
+padding:0 20px 40px;
+}
+
+/* CARD */
+
+.game-card{
+background:white;
+border-radius:24px;
+overflow:hidden;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.game-card:hover{
+transform:translateY(-5px);
+}
+
+.game-card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.game-info{
+padding:15px;
+}
+
+.game-info h3{
+font-size:18px;
+margin-bottom:8px;
+}
+
+.game-info p{
+font-size:13px;
+color:#666;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.topup-btn{
+display:block;
+text-align:center;
+padding:12px;
+background:#00c896;
+border-radius:14px;
+text-decoration:none;
+font-weight:700;
+color:white;
+}
+
+/* RESELLER */
+
+.reseller{
+margin:20px;
+background:white;
+padding:35px 25px;
+border-radius:30px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.reseller h2{
+font-size:34px;
+margin-bottom:15px;
+}
+
+.reseller p{
+line-height:1.8;
+color:#666;
+}
+
+.reseller-grid{
+margin-top:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:15px;
+}
+
+.reseller-item{
+background:#f3f4f6;
+padding:15px;
+border-radius:14px;
+font-weight:600;
+}
+
+.join-btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 30px;
+background:#00c896;
+color:white;
+text-decoration:none;
+border-radius:15px;
+font-weight:700;
+}
+
+/* LIVE ORDER */
+
+.live-order{
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+padding:15px 18px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+font-size:14px;
+z-index:999;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* FLOAT WA */
+
+.float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+color:white;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(37,211,102,0.4);
+z-index:999;
+}
+
+/* PROMO */
+
+.promo{
+position:fixed;
+bottom:0;
+width:100%;
+background:#00c896;
+padding:14px;
+text-align:center;
+font-weight:700;
+color:white;
+z-index:998;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+color:#777;
+font-size:14px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+BANGPET
+</div>
+
+<div class="nav-right">
+
+<a href="#" class="login-btn">
+Login
+</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="banner">
+
+<h1>
+TOPUP GAME AUTO PROCESS
+</h1>
+
+<p>
+Topup game murah, cepat dan aman dengan sistem reseller otomatis.
+Diamond langsung masuk menggunakan API supplier premium.
+</p>
+
+</div>
+
+<div class="search-box">
+
+🔍
+
+<input type="text" placeholder="Cari game favorit kamu">
+
+</div>
+
+</section>
+
+<!-- TITLE -->
 
 <h2 class="section-title">
-TOP UP GAME
+Top Up Game
 </h2>
 
-<div class="topup-grid">
+<!-- GRID -->
+
+<div class="game-grid">
 
 <!-- CARD -->
 
-<div class="topup-card">
+<div class="game-card">
 
-<img src="https://iili.io/3L6cKQ9.jpg">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="game-info">
 
 <h3>Mobile Legends</h3>
 
@@ -20,17 +369,21 @@ TOP UP GAME
 Diamond ML Murah & Fast Process
 </p>
 
-<a href="https://wa.me/6283199803391">
-Topup Sekarang
+<a href="https://wa.me/6283199803391" class="topup-btn">
+Topup
 </a>
+
+</div>
 
 </div>
 
 <!-- CARD -->
 
-<div class="topup-card">
+<div class="game-card">
 
-<img src="https://iili.io/3L6lRGR.jpg">
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
+
+<div class="game-info">
 
 <h3>Free Fire</h3>
 
@@ -38,17 +391,21 @@ Topup Sekarang
 Diamond FF Auto Masuk
 </p>
 
-<a href="https://wa.me/6283199803391">
-Topup Sekarang
+<a href="https://wa.me/6283199803391" class="topup-btn">
+Topup
 </a>
+
+</div>
 
 </div>
 
 <!-- CARD -->
 
-<div class="topup-card">
+<div class="game-card">
 
-<img src="https://iili.io/3L6l6Au.jpg">
+<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop">
+
+<div class="game-info">
 
 <h3>PUBG Mobile</h3>
 
@@ -56,17 +413,21 @@ Topup Sekarang
 UC PUBG Harga Reseller
 </p>
 
-<a href="https://wa.me/6283199803391">
-Topup Sekarang
+<a href="https://wa.me/6283199803391" class="topup-btn">
+Topup
 </a>
+
+</div>
 
 </div>
 
 <!-- CARD -->
 
-<div class="topup-card">
+<div class="game-card">
 
-<img src="https://iili.io/3L6lP2j.jpg">
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop">
+
+<div class="game-info">
 
 <h3>Valorant</h3>
 
@@ -74,91 +435,117 @@ Topup Sekarang
 VP Valorant Fast Process
 </p>
 
-<a href="https://wa.me/6283199803391">
-Topup Sekarang
-</a>
-
-</div>
-
-<!-- CARD -->
-
-<div class="topup-card">
-
-<img src="https://iili.io/3L6lf6x.jpg">
-
-<h3>Genshin Impact</h3>
-
-<p>
-Genesis Crystal Murah
-</p>
-
-<a href="https://wa.me/6283199803391">
-Topup Sekarang
-</a>
-
-</div>
-
-<!-- CARD -->
-
-<div class="topup-card">
-
-<img src="https://iili.io/3L6lqUF.jpg">
-
-<h3>Honkai Star Rail</h3>
-
-<p>
-Oneiric Shard Instant
-</p>
-
-<a href="https://wa.me/6283199803391">
-Topup Sekarang
+<a href="https://wa.me/6283199803391" class="topup-btn">
+Topup
 </a>
 
 </div>
 
 </div>
 
-<!-- RESELLER INFO -->
+</div>
 
-<div class="reseller-box">
+<!-- RESELLER -->
+
+<section class="reseller">
 
 <h2>
-🔥 OPEN RESELLER TOPUP
+🔥 Open Reseller Topup
 </h2>
 
 <p>
-Kami menyediakan layanan topup game otomatis dengan harga reseller.
-Diamond masuk otomatis menggunakan sistem API supplier premium.
+Bangpet Topup menggunakan sistem API otomatis dari supplier premium sehingga diamond langsung masuk secara otomatis setelah pembayaran berhasil.
 </p>
 
-<div class="reseller-list">
+<div class="reseller-grid">
 
-<div>
+<div class="reseller-item">
 ✅ Diamond Auto Masuk
 </div>
 
-<div>
+<div class="reseller-item">
 ✅ Harga Reseller
 </div>
 
-<div>
-✅ Support QRIS
+<div class="reseller-item">
+✅ QRIS Support
 </div>
 
-<div>
-✅ Proses Cepat
+<div class="reseller-item">
+✅ Fast Process
 </div>
 
-<div>
+<div class="reseller-item">
 ✅ Bisa Jadi Seller
 </div>
 
+<div class="reseller-item">
+✅ Support 24 Jam
 </div>
 
-<a href="https://wa.me/6283199803391" class="reseller-btn">
+</div>
+
+<a href="https://wa.me/6283199803391" class="join-btn">
 Gabung Reseller
 </a>
 
+</section>
+
+<!-- LIVE ORDER -->
+
+<div class="live-order" id="liveOrder">
+🔥 Andi baru topup 86 Diamond ML
 </div>
 
-</section>
+<!-- FLOAT WA -->
+
+<a href="https://wa.me/6283199803391" class="float">
+☎
+</a>
+
+<!-- PROMO -->
+
+<div class="promo">
+🔥 PROMO HARI INI • TOPUP AUTO PROCESS • FAST RESPON
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Bangpet Topup • All Rights Reserved
+</footer>
+
+<script>
+
+/* LIVE ORDER */
+
+const orders = [
+
+"🔥 Andi baru topup 86 Diamond ML",
+
+"🔥 Rizky baru topup 140 Diamond FF",
+
+"🔥 Dika baru beli UC PUBG",
+
+"🔥 Kevin baru topup VP Valorant",
+
+"🔥 Fajar baru topup Weekly Pass"
+
+];
+
+function changeOrder(){
+
+const random =
+orders[Math.floor(Math.random()*orders.length)];
+
+document.getElementById("liveOrder")
+.innerHTML = random;
+
+}
+
+setInterval(changeOrder,5000);
+
+</script>
+
+</body>
+</html>

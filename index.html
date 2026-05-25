@@ -39,13 +39,7 @@ box-shadow:0 2px 15px rgba(0,0,0,0.05);
 .logo{
 font-size:28px;
 font-weight:800;
-color:#00b894;
-}
-
-.nav-right{
-display:flex;
-align-items:center;
-gap:10px;
+color:#00c896;
 }
 
 .login-btn{
@@ -130,8 +124,8 @@ font-weight:800;
 
 .game-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:15px;
 padding:0 20px 40px;
 }
 
@@ -139,8 +133,9 @@ padding:0 20px 40px;
 
 .game-card{
 background:white;
-border-radius:24px;
+border-radius:18px;
 overflow:hidden;
+cursor:pointer;
 transition:0.3s;
 box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
@@ -151,35 +146,22 @@ transform:translateY(-5px);
 
 .game-card img{
 width:100%;
-height:170px;
+height:130px;
 object-fit:cover;
 }
 
 .game-info{
-padding:15px;
+padding:12px;
 }
 
 .game-info h3{
-font-size:18px;
-margin-bottom:8px;
+font-size:15px;
+margin-bottom:5px;
 }
 
 .game-info p{
-font-size:13px;
+font-size:12px;
 color:#666;
-line-height:1.6;
-margin-bottom:15px;
-}
-
-.topup-btn{
-display:block;
-text-align:center;
-padding:12px;
-background:#00c896;
-border-radius:14px;
-text-decoration:none;
-font-weight:700;
-color:white;
 }
 
 /* RESELLER */
@@ -287,6 +269,82 @@ color:white;
 z-index:998;
 }
 
+/* POPUP TOPUP */
+
+.ff-popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.ff-box{
+background:white;
+width:90%;
+max-width:350px;
+padding:25px;
+border-radius:25px;
+position:relative;
+animation:popup 0.3s;
+}
+
+@keyframes popup{
+from{
+transform:scale(0.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.close-btn{
+position:absolute;
+top:15px;
+right:15px;
+width:35px;
+height:35px;
+border:none;
+border-radius:50%;
+background:#eee;
+font-size:18px;
+cursor:pointer;
+}
+
+.ff-box h2{
+margin-bottom:20px;
+}
+
+.ff-box input,
+.ff-box select{
+width:100%;
+padding:14px;
+border:none;
+background:#f3f4f6;
+border-radius:12px;
+margin-bottom:15px;
+font-size:14px;
+outline:none;
+}
+
+.ff-box a{
+display:block;
+text-align:center;
+padding:14px;
+background:#00c896;
+border-radius:14px;
+text-decoration:none;
+color:white;
+font-weight:700;
+}
+
 /* FOOTER */
 
 footer{
@@ -308,13 +366,9 @@ font-size:14px;
 BANGPET
 </div>
 
-<div class="nav-right">
-
 <a href="#" class="login-btn">
 Login
 </a>
-
-</div>
 
 </nav>
 
@@ -355,31 +409,9 @@ Top Up Game
 
 <div class="game-grid">
 
-<!-- CARD -->
+<!-- FREE FIRE -->
 
-<div class="game-card">
-
-<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
-
-<div class="game-info">
-
-<h3>Mobile Legends</h3>
-
-<p>
-Diamond ML Murah & Fast Process
-</p>
-
-<a href="https://wa.me/6283199803391" class="topup-btn">
-Topup
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD -->
-
-<div class="game-card">
+<div class="game-card" onclick="openFF()">
 
 <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
 
@@ -391,15 +423,29 @@ Topup
 Diamond FF Auto Masuk
 </p>
 
-<a href="https://wa.me/6283199803391" class="topup-btn">
-Topup
-</a>
+</div>
+
+</div>
+
+<!-- ML -->
+
+<div class="game-card">
+
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="game-info">
+
+<h3>Mobile Legends</h3>
+
+<p>
+Diamond ML Murah
+</p>
 
 </div>
 
 </div>
 
-<!-- CARD -->
+<!-- PUBG -->
 
 <div class="game-card">
 
@@ -410,18 +456,14 @@ Topup
 <h3>PUBG Mobile</h3>
 
 <p>
-UC PUBG Harga Reseller
+UC PUBG Murah
 </p>
 
-<a href="https://wa.me/6283199803391" class="topup-btn">
-Topup
-</a>
-
 </div>
 
 </div>
 
-<!-- CARD -->
+<!-- VALORANT -->
 
 <div class="game-card">
 
@@ -432,12 +474,8 @@ Topup
 <h3>Valorant</h3>
 
 <p>
-VP Valorant Fast Process
+VP Valorant Fast
 </p>
-
-<a href="https://wa.me/6283199803391" class="topup-btn">
-Topup
-</a>
 
 </div>
 
@@ -490,6 +528,44 @@ Gabung Reseller
 </a>
 
 </section>
+
+<!-- POPUP FREE FIRE -->
+
+<div class="ff-popup" id="ffPopup">
+
+<div class="ff-box">
+
+<button class="close-btn" onclick="closeFF()">
+✕
+</button>
+
+<h2>Topup Free Fire</h2>
+
+<input type="text" placeholder="Masukkan ID Free Fire">
+
+<select>
+
+<option>Pilih Diamond</option>
+
+<option>5 Diamond - Rp1.000</option>
+
+<option>70 Diamond - Rp10.000</option>
+
+<option>140 Diamond - Rp20.000</option>
+
+<option>355 Diamond - Rp50.000</option>
+
+<option>720 Diamond - Rp100.000</option>
+
+</select>
+
+<a href="https://wa.me/6283199803391">
+Lanjut Pembayaran
+</a>
+
+</div>
+
+</div>
 
 <!-- LIVE ORDER -->
 
@@ -544,6 +620,22 @@ document.getElementById("liveOrder")
 }
 
 setInterval(changeOrder,5000);
+
+/* POPUP */
+
+function openFF(){
+
+document.getElementById("ffPopup")
+.style.display="flex";
+
+}
+
+function closeFF(){
+
+document.getElementById("ffPopup")
+.style.display="none";
+
+}
 
 </script>
 

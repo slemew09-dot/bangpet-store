@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bangpet Topup</title>
+
+<title>FluxSave - Fast Video Downloader</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,211 +18,177 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f3f4f6;
-color:#111;
+background:#070b14;
+color:white;
 overflow-x:hidden;
+}
+
+/* BACKGROUND GLOW */
+
+.glow{
+position:fixed;
+width:400px;
+height:400px;
+border-radius:50%;
+filter:blur(150px);
+z-index:-1;
+opacity:0.15;
+}
+
+.glow.one{
+background:#00ffd5;
+top:-100px;
+left:-100px;
+}
+
+.glow.two{
+background:#8b5cf6;
+bottom:-100px;
+right:-100px;
 }
 
 /* NAVBAR */
 
 nav{
-background:white;
-padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:22px 35px;
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.05);
 position:sticky;
 top:0;
 z-index:999;
-box-shadow:0 2px 15px rgba(0,0,0,0.05);
 }
 
 .logo{
-font-size:28px;
+font-size:32px;
 font-weight:800;
-color:#00c896;
+background:linear-gradient(90deg,#00ffd5,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.login-btn{
-padding:10px 18px;
-border-radius:12px;
-background:#111;
-color:white;
+.menu{
+display:flex;
+gap:20px;
+}
+
+.menu a{
 text-decoration:none;
-font-weight:600;
+color:#d1d5db;
+font-size:15px;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:white;
 }
 
 /* HERO */
 
 .hero{
-padding:25px 20px;
-}
-
-.banner{
-background:linear-gradient(135deg,#00c896,#00a8ff);
-border-radius:30px;
-padding:40px 30px;
-color:white;
-position:relative;
-overflow:hidden;
-}
-
-.banner::before{
-content:'';
-position:absolute;
-width:250px;
-height:250px;
-background:rgba(255,255,255,0.15);
-border-radius:50%;
-top:-100px;
-right:-100px;
-}
-
-.banner h1{
-font-size:42px;
-line-height:1.2;
-margin-bottom:15px;
-position:relative;
-z-index:1;
-}
-
-.banner p{
-font-size:16px;
-line-height:1.8;
-position:relative;
-z-index:1;
-}
-
-/* SEARCH */
-
-.search-box{
-margin-top:20px;
-background:white;
-padding:14px 18px;
-border-radius:18px;
+min-height:90vh;
 display:flex;
+justify-content:center;
 align-items:center;
-gap:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
+padding:50px 20px;
+text-align:center;
 }
 
-.search-box input{
-border:none;
-outline:none;
-width:100%;
-font-size:16px;
+.hero-box{
+max-width:850px;
 }
 
-/* TITLE */
-
-.section-title{
-padding:30px 20px 15px;
-font-size:36px;
+.hero-box h1{
+font-size:68px;
+line-height:1.1;
+margin-bottom:20px;
 font-weight:800;
 }
 
-/* GRID */
-
-.game-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:15px;
-padding:0 20px 40px;
+.hero-box span{
+background:linear-gradient(90deg,#00ffd5,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-/* CARD */
+.hero-box p{
+color:#9ca3af;
+font-size:18px;
+line-height:1.8;
+margin-bottom:40px;
+}
 
-.game-card{
-background:white;
+/* DOWNLOAD BOX */
+
+.download-box{
+background:rgba(255,255,255,0.04);
+padding:20px;
+border-radius:30px;
+display:flex;
+gap:15px;
+align-items:center;
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.05);
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+
+.download-box input{
+flex:1;
+height:60px;
+border:none;
+outline:none;
+padding:0 20px;
 border-radius:18px;
-overflow:hidden;
+background:#111827;
+color:white;
+font-size:16px;
+}
+
+.download-box button{
+height:60px;
+padding:0 30px;
+border:none;
+border-radius:18px;
+background:linear-gradient(90deg,#00ffd5,#8b5cf6);
+color:white;
+font-weight:700;
+font-size:15px;
 cursor:pointer;
 transition:0.3s;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-.game-card:hover{
-transform:translateY(-5px);
+.download-box button:hover{
+transform:scale(1.05);
 }
 
-.game-card img{
-width:100%;
-height:130px;
-object-fit:cover;
-}
+/* PLATFORM */
 
-.game-info{
-padding:12px;
-}
-
-.game-info h3{
-font-size:15px;
-margin-bottom:5px;
-}
-
-.game-info p{
-font-size:12px;
-color:#666;
-}
-
-/* RESELLER */
-
-.reseller{
-margin:20px;
-background:white;
-padding:35px 25px;
-border-radius:30px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-.reseller h2{
-font-size:34px;
-margin-bottom:15px;
-}
-
-.reseller p{
-line-height:1.8;
-color:#666;
-}
-
-.reseller-grid{
-margin-top:25px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+.platforms{
+margin-top:30px;
+display:flex;
+justify-content:center;
 gap:15px;
+flex-wrap:wrap;
 }
 
-.reseller-item{
-background:#f3f4f6;
-padding:15px;
-border-radius:14px;
-font-weight:600;
-}
-
-.join-btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 30px;
-background:#00c896;
-color:white;
-text-decoration:none;
+.platform{
+padding:12px 20px;
+background:rgba(255,255,255,0.04);
 border-radius:15px;
-font-weight:700;
-}
-
-/* LIVE ORDER */
-
-.live-order{
-position:fixed;
-bottom:20px;
-left:20px;
-background:white;
-padding:15px 18px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
 font-size:14px;
-z-index:999;
-animation:fade 1s;
+color:#d1d5db;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+/* RESULT */
+
+.result{
+margin-top:40px;
+display:none;
+animation:fade 0.5s;
 }
 
 @keyframes fade{
@@ -235,140 +202,155 @@ transform:translateY(0);
 }
 }
 
-/* FLOAT WA */
-
-.float{
-position:fixed;
-right:20px;
-bottom:20px;
-width:60px;
-height:60px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:28px;
-color:white;
-text-decoration:none;
-box-shadow:0 5px 20px rgba(37,211,102,0.4);
-z-index:999;
-}
-
-/* PROMO */
-
-.promo{
-position:fixed;
-bottom:0;
-width:100%;
-background:#00c896;
-padding:14px;
-text-align:center;
-font-weight:700;
-color:white;
-z-index:998;
-}
-
-/* POPUP TOPUP */
-
-.ff-popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.ff-box{
-background:white;
-width:90%;
-max-width:350px;
+.result-box{
+background:rgba(255,255,255,0.04);
 padding:25px;
-border-radius:25px;
-position:relative;
-animation:popup 0.3s;
+border-radius:30px;
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.05);
 }
 
-@keyframes popup{
-from{
-transform:scale(0.8);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
-}
-
-.close-btn{
-position:absolute;
-top:15px;
-right:15px;
-width:35px;
-height:35px;
-border:none;
-border-radius:50%;
-background:#eee;
-font-size:18px;
-cursor:pointer;
-}
-
-.ff-box h2{
+.result-box img{
+width:100%;
+max-width:500px;
+border-radius:20px;
 margin-bottom:20px;
 }
 
-.ff-box input,
-.ff-box select{
-width:100%;
-padding:14px;
-border:none;
-background:#f3f4f6;
-border-radius:12px;
-margin-bottom:15px;
-font-size:14px;
-outline:none;
+.result-box h2{
+margin-bottom:10px;
 }
 
-.ff-box a{
-display:block;
-text-align:center;
-padding:14px;
-background:#00c896;
-border-radius:14px;
+.result-box p{
+color:#9ca3af;
+margin-bottom:20px;
+}
+
+.download-btn{
+display:inline-block;
+padding:15px 30px;
+border-radius:16px;
+background:linear-gradient(90deg,#00ffd5,#8b5cf6);
 text-decoration:none;
 color:white;
 font-weight:700;
+}
+
+/* FEATURES */
+
+.features{
+padding:100px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:45px;
+margin-bottom:60px;
+font-weight:800;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.feature-card{
+background:rgba(255,255,255,0.04);
+padding:30px;
+border-radius:30px;
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+}
+
+.feature-card h3{
+margin-bottom:15px;
+font-size:22px;
+}
+
+.feature-card p{
+color:#9ca3af;
+line-height:1.8;
+}
+
+/* LIVE DOWNLOAD */
+
+.live-download{
+position:fixed;
+bottom:20px;
+left:20px;
+background:rgba(255,255,255,0.06);
+padding:15px 20px;
+border-radius:18px;
+backdrop-filter:blur(15px);
+font-size:14px;
+z-index:999;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 /* FOOTER */
 
 footer{
-padding:40px;
+padding:40px 20px;
 text-align:center;
-color:#777;
-font-size:14px;
+color:#6b7280;
+border-top:1px solid rgba(255,255,255,0.05);
+margin-top:50px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-box h1{
+font-size:45px;
+}
+
+.download-box{
+flex-direction:column;
+}
+
+.download-box input{
+width:100%;
+}
+
+.download-box button{
+width:100%;
+}
+
 }
 
 </style>
 </head>
 <body>
 
+<!-- GLOW -->
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
 <!-- NAVBAR -->
 
 <nav>
 
 <div class="logo">
-BANGPET
+FluxSave
 </div>
 
-<a href="#" class="login-btn">
-Login
-</a>
+<div class="menu">
+
+<a href="#">Home</a>
+<a href="#">Features</a>
+<a href="#">Support</a>
+
+</div>
 
 </nav>
 
@@ -376,266 +358,199 @@ Login
 
 <section class="hero">
 
-<div class="banner">
+<div class="hero-box">
 
 <h1>
-TOPUP GAME AUTO PROCESS
+Download Video <span>Without Limits</span>
 </h1>
 
 <p>
-Topup game murah, cepat dan aman dengan sistem reseller otomatis.
-Diamond langsung masuk menggunakan API supplier premium.
+Fast TikTok, YouTube & Instagram downloader with premium speed and modern interface.
 </p>
 
-</div>
+<div class="download-box">
 
-<div class="search-box">
+<input
+type="text"
+id="videoInput"
+placeholder="Paste TikTok / YouTube / Instagram link..."
+>
 
-🔍
-
-<input type="text" placeholder="Cari game favorit kamu">
-
-</div>
-
-</section>
-
-<!-- TITLE -->
-
-<h2 class="section-title">
-Top Up Game
-</h2>
-
-<!-- GRID -->
-
-<div class="game-grid">
-
-<!-- FREE FIRE -->
-
-<div class="game-card" onclick="openFF()">
-
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
-
-<div class="game-info">
-
-<h3>Free Fire</h3>
-
-<p>
-Diamond FF Auto Masuk
-</p>
-
-</div>
-
-</div>
-
-<!-- ML -->
-
-<div class="game-card">
-
-<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
-
-<div class="game-info">
-
-<h3>Mobile Legends</h3>
-
-<p>
-Diamond ML Murah
-</p>
-
-</div>
-
-</div>
-
-<!-- PUBG -->
-
-<div class="game-card">
-
-<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop">
-
-<div class="game-info">
-
-<h3>PUBG Mobile</h3>
-
-<p>
-UC PUBG Murah
-</p>
-
-</div>
-
-</div>
-
-<!-- VALORANT -->
-
-<div class="game-card">
-
-<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop">
-
-<div class="game-info">
-
-<h3>Valorant</h3>
-
-<p>
-VP Valorant Fast
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- RESELLER -->
-
-<section class="reseller">
-
-<h2>
-🔥 Open Reseller Topup
-</h2>
-
-<p>
-Bangpet Topup menggunakan sistem API otomatis dari supplier premium sehingga diamond langsung masuk secara otomatis setelah pembayaran berhasil.
-</p>
-
-<div class="reseller-grid">
-
-<div class="reseller-item">
-✅ Diamond Auto Masuk
-</div>
-
-<div class="reseller-item">
-✅ Harga Reseller
-</div>
-
-<div class="reseller-item">
-✅ QRIS Support
-</div>
-
-<div class="reseller-item">
-✅ Fast Process
-</div>
-
-<div class="reseller-item">
-✅ Bisa Jadi Seller
-</div>
-
-<div class="reseller-item">
-✅ Support 24 Jam
-</div>
-
-</div>
-
-<a href="https://wa.me/6283199803391" class="join-btn">
-Gabung Reseller
-</a>
-
-</section>
-
-<!-- POPUP FREE FIRE -->
-
-<div class="ff-popup" id="ffPopup">
-
-<div class="ff-box">
-
-<button class="close-btn" onclick="closeFF()">
-✕
+<button onclick="downloadVideo()">
+Download
 </button>
 
-<h2>Topup Free Fire</h2>
+</div>
 
-<input type="text" placeholder="Masukkan ID Free Fire">
+<div class="platforms">
 
-<select>
+<div class="platform">
+TikTok
+</div>
 
-<option>Pilih Diamond</option>
+<div class="platform">
+YouTube
+</div>
 
-<option>5 Diamond - Rp1.000</option>
+<div class="platform">
+Instagram
+</div>
 
-<option>70 Diamond - Rp10.000</option>
+<div class="platform">
+Facebook
+</div>
 
-<option>140 Diamond - Rp20.000</option>
+</div>
 
-<option>355 Diamond - Rp50.000</option>
+<!-- RESULT -->
 
-<option>720 Diamond - Rp100.000</option>
+<div class="result" id="result">
 
-</select>
+<div class="result-box">
 
-<a href="https://wa.me/6283199803391">
-Lanjut Pembayaran
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+<h2>
+Video Ready
+</h2>
+
+<p>
+Your video has been processed successfully.
+</p>
+
+<a href="#" class="download-btn">
+Download MP4
 </a>
 
 </div>
 
 </div>
 
-<!-- LIVE ORDER -->
-
-<div class="live-order" id="liveOrder">
-🔥 Andi baru topup 86 Diamond ML
 </div>
 
-<!-- FLOAT WA -->
+</section>
 
-<a href="https://wa.me/6283199803391" class="float">
-☎
-</a>
+<!-- FEATURES -->
 
-<!-- PROMO -->
+<section class="features">
 
-<div class="promo">
-🔥 PROMO HARI INI • TOPUP AUTO PROCESS • FAST RESPON
+<h2 class="section-title">
+Why FluxSave?
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<h3>
+⚡ Ultra Fast
+</h3>
+
+<p>
+Download video with blazing fast processing speed.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>
+🎥 HD Quality
+</h3>
+
+<p>
+Supports HD and high quality video download.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>
+🚫 No Watermark
+</h3>
+
+<p>
+TikTok download without annoying watermark.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>
+📱 Mobile Friendly
+</h3>
+
+<p>
+Optimized for Android, iPhone and desktop devices.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LIVE DOWNLOAD -->
+
+<div class="live-download" id="liveDownload">
+🔥 User from Indonesia downloaded TikTok video
 </div>
 
 <!-- FOOTER -->
 
 <footer>
-© 2026 Bangpet Topup • All Rights Reserved
+© 2026 FluxSave • Fast Video Downloader
 </footer>
 
 <script>
 
-/* LIVE ORDER */
+/* DOWNLOAD SIMULATION */
 
-const orders = [
+function downloadVideo(){
 
-"🔥 Andi baru topup 86 Diamond ML",
+const input =
+document.getElementById("videoInput").value;
 
-"🔥 Rizky baru topup 140 Diamond FF",
+if(input === ""){
 
-"🔥 Dika baru beli UC PUBG",
+alert("Paste link terlebih dahulu");
 
-"🔥 Kevin baru topup VP Valorant",
+return;
 
-"🔥 Fajar baru topup Weekly Pass"
+}
+
+document.getElementById("result")
+.style.display = "block";
+
+}
+
+/* LIVE DOWNLOAD */
+
+const downloads = [
+
+"🔥 User from Indonesia downloaded TikTok video",
+
+"🔥 User from Malaysia downloaded YouTube video",
+
+"🔥 User from Singapore downloaded Instagram Reel",
+
+"🔥 User from Thailand downloaded Facebook video"
 
 ];
 
-function changeOrder(){
+function changeLive(){
 
 const random =
-orders[Math.floor(Math.random()*orders.length)];
+downloads[Math.floor(Math.random()*downloads.length)];
 
-document.getElementById("liveOrder")
+document.getElementById("liveDownload")
 .innerHTML = random;
 
 }
 
-setInterval(changeOrder,5000);
-
-/* POPUP */
-
-function openFF(){
-
-document.getElementById("ffPopup")
-.style.display="flex";
-
-}
-
-function closeFF(){
-
-document.getElementById("ffPopup")
-.style.display="none";
-
-}
+setInterval(changeLive,5000);
 
 </script>
 
